@@ -1,0 +1,277 @@
+# Translation of Plugins - Google Apps Login - Stable (latest release) in Japanese
+# This file is distributed under the same license as the Plugins - Google Apps Login - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2016-12-07 11:44:39+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: GlotPress/2.4.0-alpha\n"
+"Language: ja_JP\n"
+"Project-Id-Version: Plugins - Google Apps Login - Stable (latest release)\n"
+
+#: core/core_google_apps_login.php:912
+msgid "Remember Me - do not log users out at end of browser session"
+msgstr "Remember Me - ブラウザセッションの終了時にユーザーをログアウトしない"
+
+#: core/core_google_apps_login.php:296
+msgid "Unrecognized error message"
+msgstr "認識されないエラーメッセージ"
+
+#: core/core_google_apps_login.php:292
+msgid "The user must use <i>%s</i> to access the site"
+msgstr "ユーザーがサイトにアクセスするために、 <i>%s</i> の利用が必要です。"
+
+#. Author of the plugin/theme
+msgid "Dan Lester"
+msgstr "Dan Lester"
+
+#. Description of the plugin/theme
+msgid "Simple secure login for Wordpress through users' Google Apps accounts (uses secure OAuth2, and MFA if enabled)"
+msgstr "ユーザーの Google Apps アカウント（安全な OAuth2 を使用し、有効な場合は MFA を使用）を利用したWordpressの簡単で安全なログイン"
+
+#. #-#-#-#-#  google-apps-login-code.pot (Google Apps Login 3.0)  #-#-#-#-#
+#. Plugin URI of the plugin/theme
+#. #-#-#-#-#  google-apps-login-code.pot (Google Apps Login 3.0)  #-#-#-#-#
+#. Author URI of the plugin/theme
+msgid "http://wp-glogin.com/"
+msgstr "http://wp-glogin.com/"
+
+#: google_apps_login.php:215
+msgid "No Thanks"
+msgstr "いいえ、結構です。"
+
+#: google_apps_login.php:214
+msgid "Find out more"
+msgstr "もっと見る"
+
+#: google_apps_login.php:212
+msgid "Completely forget about WordPress user management - upgrade to <a href=\"%s\">Google Apps Login Premium or Enterprise</a> to automatically sync users from your Google Apps domain"
+msgstr "WordPress ユーザー管理を完全に忘れる - Google Apps ドメインのユーザーを自動的に同期させるには、<a href=\"%s\"> Google Apps ログインプレミアムまたはエンタープライズ</a>にアップグレードしてください。"
+
+#: google_apps_login.php:162
+msgid "In this basic version of the plugin, any <i>existing</i> WordPress account corresponding to a Google email address can authenticate via Google."
+msgstr "プラグインの基本バージョンでは、Google の電子メールアドレスに対応する<i>既存の</i> WordPress アカウントを、Google を通じて認証できます。"
+
+#: google_apps_login.php:160
+msgid "The Domain Control section is only applicable to the premium and enterprise versions of this plugin."
+msgstr "プレミアムバージョンとエンタープライズバージョンにのみドメイン制御セクションを利用できます。"
+
+#: google_apps_login.php:58
+msgid "For full support, and premium features that greatly simplify WordPress user management for admins, please visit:"
+msgstr "完全なサポートと WordPress のユーザー管理を大幅に簡素化するプレミアム機能については、次のサイトをご覧ください: "
+
+#: core/core_google_apps_login.php:1233
+msgid "Settings"
+msgstr "設定"
+
+#: core/core_google_apps_login.php:1040
+msgid "Unspecified error"
+msgstr "詳細不明のエラー"
+
+#: core/core_google_apps_login.php:1035
+msgid "Key cannot be coerced into a PEM key - invalid format in private_key of JSON key file"
+msgstr "キーを強制的に PEM キーにすることはできません - JSON キーファイルの private_key の無効な形式"
+
+#: core/core_google_apps_login.php:1034
+msgid "JSON key file does not represent a Service Account"
+msgstr "JSON キーファイルは、サービスアカウントを表していません。"
+
+#: core/core_google_apps_login.php:1033
+msgid "JSON key file does not contain all of client_email, client_id, private_key, and type"
+msgstr "JSON キーファイルに client_email、client_id、private_key、および type のすべてが含まれていません。"
+
+#: core/core_google_apps_login.php:1032
+msgid "JSON key file could not be decoded correctly"
+msgstr "JSON キーファイルを正しくデコードできませんでした"
+
+#: core/core_google_apps_login.php:1031
+msgid "JSON key file was empty"
+msgstr "JSON キーファイルが空でした。"
+
+#: core/core_google_apps_login.php:1030
+msgid "Error with file upload on the server - failed to write to disk"
+msgstr "サーバー上のファイルアップロードでエラーが発生しました - ディスクへの書き込みに失敗しました"
+
+#: core/core_google_apps_login.php:1029
+msgid "Error with file upload on the server - no temp directory exists"
+msgstr "サーバー上のファイルアップロードでエラーが発生しました - 一時ディレクトリが存在しません"
+
+#: core/core_google_apps_login.php:1028
+msgid "Error with file upload on the server - file was too large"
+msgstr "サーバー上のファイルアップロードでエラーが発生しました - ファイルが大きすぎます"
+
+#: core/core_google_apps_login.php:1027
+msgid "Error with file upload on the server"
+msgstr "サーバー上のファイルアップロードでエラーが発生しました"
+
+#: core/core_google_apps_login.php:1026
+msgid "Google Apps domain admin must be a valid email address of one of your Google Apps admins"
+msgstr "Google Apps ドメイン管理者は、Google Apps 管理者の有効なメールアドレスである必要があります"
+
+#: core/core_google_apps_login.php:1025
+msgid "Service Account email must be a valid email addresses"
+msgstr "サービスアカウントの電子メールは、有効な電子メールアドレスである必要があります"
+
+#: core/core_google_apps_login.php:1024
+msgid "The Client Secret should be longer than that"
+msgstr "Client Secret は、それよりも長くする必要があります"
+
+#: core/core_google_apps_login.php:1023
+msgid "The Client ID should be longer than that"
+msgstr "Client ID は、それよりも長くする必要があります"
+
+#: core/core_google_apps_login.php:938
+msgid "Leave unchecked if in doubt"
+msgstr "不確かな場合は、未チェックのままにします"
+
+#: core/core_google_apps_login.php:934
+msgid "Use sub-site specific callback from Google"
+msgstr "Google のサブサイト固有のコールバックを使用する"
+
+#: core/core_google_apps_login.php:929
+msgid "This setting is for multisite admins only. See <a href=\"%s\" target=\"gainstr\">instructions here</a>."
+msgstr "この設定は、マルチサイト管理者専用です。 <a href=\"%s\" target=\"gainstr\">こちらの手順</a>をご覧ください。"
+
+#: core/core_google_apps_login.php:928
+msgid "Multisite Options"
+msgstr "マルチサイト用オプション"
+
+#: core/core_google_apps_login.php:920
+msgid "Display 'Powered By wp-glogin.com' on Login form"
+msgstr "ログインフォームに「Powered By wp-glogin.com」と表示する"
+
+#: core/core_google_apps_login.php:904
+msgid "Automatically redirect to Google from login page"
+msgstr "ログインページから Google に自動的にリダイレクトする"
+
+#: core/core_google_apps_login.php:896
+msgid "Force user to confirm Google permissions every time"
+msgstr "Google のアクセス許可を毎回強制的に確認するようユーザーの強制する"
+
+#: core/core_google_apps_login.php:888
+msgid "See <a href=\"%s\" target=\"gainstr\">instructions here</a>."
+msgstr "<a href=\"%s\" target=\"gainstr\">こちらの手順</a>をご覧ください。"
+
+#: core/core_google_apps_login.php:887
+msgid "Once you have the plugin working, you can try these settings to customize the login flow for your users."
+msgstr "プラグインが動作した後に、これらの設定を試して、ユーザーのログインフローをカスタマイズできます。"
+
+#: core/core_google_apps_login.php:820
+msgid "A Google Apps Domain admin's email"
+msgstr "Google Apps ドメインの管理者のメール"
+
+#: core/core_google_apps_login.php:809
+msgid "Paste contents of JSON file"
+msgstr "JSON ファイルの内容を貼り付ける"
+
+#: core/core_google_apps_login.php:808
+msgid "Upload a new Service Account JSON file"
+msgstr "新しいサービスアカウントの JSON ファイルをアップロードする"
+
+#: core/core_google_apps_login.php:800
+msgid "Private key fingerprint"
+msgstr "秘密鍵の fingerprint"
+
+#: core/core_google_apps_login.php:793
+msgid "Service Account email address"
+msgstr "サービスアカウントの電子メールアドレス"
+
+#: core/core_google_apps_login.php:785
+msgid "Service Account Client ID / Name"
+msgstr "サービスアカウント Client ID / 名前"
+
+#: core/core_google_apps_login.php:750
+msgid "Client Secret"
+msgstr "Client Secret"
+
+#: core/core_google_apps_login.php:747 core/core_google_apps_login.php:753
+msgid "Normally something like %s"
+msgstr "通常、%s のようなもの"
+
+#: core/core_google_apps_login.php:744
+msgid "Client ID"
+msgstr "Client ID"
+
+#: core/core_google_apps_login.php:737
+msgid "The <a href='%s'>instructions</a> above will guide you to Google's Cloud Console where you will enter two URLs, and also obtain two codes (Client ID and Client Secret) which you will need to enter in the boxes below."
+msgstr "上記の<a href='%s'>手順</a>は、下記の2つのコード（Client ID と Client Secret）を取得するための Google Cloud Console 上の手引です。"
+
+#: core/core_google_apps_login.php:710
+msgid "Settings saved."
+msgstr "設定を保存しました。"
+
+#: core/core_google_apps_login.php:681
+msgid "Save Changes"
+msgstr "変更を保存"
+
+#: core/core_google_apps_login.php:655
+msgid "Click here to open your personalized instructions in a new window"
+msgstr "新しいウィンドウでパーソナライズされた手順を開くにはここをクリック"
+
+#: core/core_google_apps_login.php:652
+msgid "To set up your website to enable Google logins, you will need to follow instructions specific to your website."
+msgstr "Google ログインを有効にするためにウェブサイトを設定するには、ウェブサイト固有の手順に従う必要があります。"
+
+#: core/core_google_apps_login.php:646
+msgid "Google Apps Login setup"
+msgstr "Google Apps Login セットアップ"
+
+#. #-#-#-#-#  google-apps-login-code.pot (Google Apps Login 3.0)  #-#-#-#-#
+#. Plugin Name of the plugin/theme
+#: core/core_google_apps_login.php:618 core/core_google_apps_login.php:623
+msgid "Google Apps Login"
+msgstr "Google Apps Login"
+
+#: core/core_google_apps_login.php:618 core/core_google_apps_login.php:623
+msgid "Google Apps Login settings"
+msgstr "Google Apps Login 設定"
+
+#: core/core_google_apps_login.php:570
+msgid "You will need to complete Google Apps Login <a href=\"%s\">Settings</a> in order for the plugin to work"
+msgstr "プラグインを動作するためには、Google Apps ログイン<a href=\"%s\">設定</a>を完了する必要があります"
+
+#: core/core_google_apps_login.php:396
+msgid "User %s not registered in Wordpress"
+msgstr "ユーザー %s は、WordPress に登録されていません。"
+
+#: core/core_google_apps_login.php:378
+msgid "User authenticated OK, but error fetching user details from Google"
+msgstr "ユーザーは認証済みですが、Google からユーザーの詳細を取得する際にエラーが発生しました"
+
+#: core/core_google_apps_login.php:354
+msgid "Email needs to be verified on your Google Account"
+msgstr "Google アカウントでメールを確認する必要があります"
+
+#: core/core_google_apps_login.php:320
+msgid "Session mismatch - try again, but there could be a problem setting cookies"
+msgstr "セッションの不一致 - もう一度お試しください。ただし、Cookie の設定に問題がある可能性があります"
+
+#: core/core_google_apps_login.php:313
+msgid "Session mismatch - try again, but there could be a problem passing state"
+msgstr "セッションの不一致 - もう一度やり直してください。状態を渡す際に問題が発生する可能性があります"
+
+#: core/core_google_apps_login.php:307
+msgid "Session mismatch - try again, but there could be a problem setting state"
+msgstr "セッションの不一致 - もう一度やり直してください。状態の設定に問題がある可能性があります"
+
+#: core/core_google_apps_login.php:284
+msgid "You did not grant access"
+msgstr "アクセスを許可しませんでした"
+
+#: core/core_google_apps_login.php:260
+msgid "Login with Google"
+msgstr "Login with Google"
+
+#: core/core_google_apps_login.php:242
+msgid "or"
+msgstr "または"
+
+#: core/core_google_apps_login.php:226
+msgid "Powered by "
+msgstr "Powered by "
+
+#: core/core_google_apps_login.php:212
+msgid "Redirecting to <a href=\"%s\">Login via Google</a>..."
+msgstr "<a href=\"%s\"> Google経由でログインする</a>へのリダイレクト中"

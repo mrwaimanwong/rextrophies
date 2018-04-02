@@ -1,0 +1,228 @@
+<div id="quickiebar-settings" class="quickiebar-page">
+	<div class="wrap">
+
+		<div class="qb-header">
+			<div class="qb-page-icon"></div>
+			<h2 class="qb-header-text">
+				<span class="actionable">Settings &nbsp;<span data-bind="with: notification(), visible: notification()"><span class='qb-header-notification' data-bind="css: {'qb-success': status == 'success', 'qb-failure': status == 'failure'}"><i class="fa fa-check" data-bind="visible: status == 'success'"></i><i class="fa fa-exclamation-triangle" data-bind="visible: status == 'failure'"></i>&nbsp;<span data-bind="text: text"></span><i class="fa fa-times-circle" data-bind="click: $root.dismissNotification"></i></span></span></span>
+			</h2>
+		</div>
+
+		<div class="qb-main-content">
+
+			<div class="qb-loading-page-placeholder" data-bind="visible: syncingDataWithServer()">
+				<i class="fa fa-spin fa-spinner" style="font-size:100px;text-align:center;width:100%;padding:100px 0;color:#DDD;"></i>
+			</div>
+
+			<div style="display:none;" class="qb-options-list" data-bind="visible: !syncingDataWithServer(), with: settings">
+
+				<div class="option-element">
+					<h6>Email Address (Optional)</h6>
+					<p>Where should we send plugin updates & news?</p>
+					<input type="text" data-bind="valueUpdate: 'keyup', value: email" />
+
+					<button style="display:none;" data-bind="click: $root.subscribe, visible: !subscribed() && !$root.subscribing()" class="tiny barGreen">SUBSCRIBE & SAVE 10% ON PRO</button>
+
+					<span id="subscribe-success-text" style="display:none;font-size:14px;" class="barGreen-color">&nbsp;<i class="fa fa-check-circle-o"></i> &nbsp;You're in! Check your email to confirm.</span>
+					<span style="display:none;font-size:14px;" data-bind="visible: $root.subscribing()">&nbsp;<i class="fa fa-spin fa-spinner"></i> &nbsp;Subscribing...</span>
+				</div>
+
+				<div class="option-element">
+					<h6>Attribution</h6>
+					<p>Support the plugin by allowing us to display a small attribution icon in the bar.</p>
+					<ul>
+						<li data-bind="click: function(){ attribution('hidden'); }, css: { selected: attribution() == 'hidden' }">NO ATTRIBUTION</li>
+						<li data-bind="click: function(){ attribution('visible'); }, css: { selected: attribution() == 'visible' }">ATTRIBUTION<!--<small>THANK YOU!</small>--></li>
+					</ul>
+					<div class="help-link"><i class="fa fa-question-circle"></i></div>
+				</div>
+
+				<div class="option-element">
+					<h6>Visibility</h6>
+					<p>Where do you want your QuickieBar bars to be displayed?</p>
+					<ul>
+						<li data-bind="click: function(){ visibility('everywhere'); }, css: { selected: visibility() == 'everywhere' }">EVERYWHERE</li>
+						<li data-bind="click: function(){ visibility('pagesonly'); }, css: { selected: visibility() == 'pagesonly' }">PAGES ONLY</li>
+						<li data-bind="click: function(){ visibility('postsonly'); }, css: { selected: visibility() == 'postsonly' }">POSTS ONLY</li>
+						<li data-bind="click: function(){ visibility('homepageonly'); }, css: { selected: visibility() == 'homepageonly' }">HOME PAGE ONLY</li>
+						<li data-bind="click: function(){ visibility('custom'); }, css: { selected: visibility() == 'custom' }">CUSTOM...</li>
+					</ul>
+					<div class="embedded-options" data-bind="visible: visibility() == 'custom'">
+
+						<div class="embedded-option" data-bind="if: $root.pages() && $root.posts() && $root.categories()">
+							<h6>Bar is visible on <span data-bind="text: $root.pages.selectedCount()"></span>/<span data-bind="text: $root.pages().length"></span> pages and
+								<span data-bind="visible: $root.postsFilteringEnabled()">
+									<span data-bind="text: $root.posts.selectedCount()"></span>/<span data-bind="text: $root.posts().length"></span> posts
+								</span>
+								<span data-bind="visible: !$root.postsFilteringEnabled()">
+									<span data-bind="text: $root.categories.selectedCount()"></span>/<span data-bind="text: $root.categories().length"></span> post categories
+								</span>.</h6>
+						</div>
+
+						<div class="embedded-option" data-bind="if: $root.pages()">
+							<div class="embedded-option-label">Pages (<span data-bind="text: $root.pages.selectedCount()"></span>/<span data-bind="text: $root.pages().length"></span>)</div>
+							<div class="embedded-option-value" data-bind="click: function(){ page_visibility('hide'); }, css: {selected: page_visibility() == 'hide' }">HIDE...</div>
+							<div class="embedded-option-value" data-bind="click: function(){ page_visibility('show'); }, css: {selected: page_visibility() == 'show' }">SHOW...</div>
+
+							<div class="embedded-option-value-explaination" data-bind="visible: page_visibility() == 'show'">Bars will <b>show on all pages</b> except any Page Exceptions you add below</div>
+							<div class="embedded-option-value-explaination" data-bind="visible: page_visibility() == 'hide'">Bars will <b>not show on any pages</b> except any Page Exceptions you add below</div>
+							<div class="embedded-option-value-explaination actionable" data-bind="visible: !$root.managingPageExceptions(), click: function(){ $root.managingPageExceptions(true); }"><i class="fa fa-plus"></i> Add Page Exceptions</div>
+
+							<ul class="embedded-options-select" data-bind="visible: $root.managingPageExceptions(), foreach: $root.pages, attr: { 'class': ('embedded-options-select ' + $root.settings.page_visibility()) }">
+								<li data-bind="click: $root.togglePageException, css: { selected: $root.pageIsExcepted($data) }">
+									<span data-bind="text: post_title"></span>
+									<i class="fa fa-eye"></i>
+									<i class="fa fa-eye-slash"></i>
+								</li>
+							</ul>
+
+						</div>
+
+						<div class="embedded-option" data-bind="if: $root.posts()">
+
+							<div class="embedded-option-label" data-bind="visible: $root.postsFilteringEnabled()">Posts (<span data-bind="text: $root.posts.selectedCount()"></span>/<span data-bind="text: $root.posts().length"></span>)</div>
+							<div class="embedded-option-label faded2x" data-bind="visible: !$root.postsFilteringEnabled()">Posts (N/A)</div>
+
+							<div data-bind="visible: !$root.postsFilteringEnabled()" class="embedded-option-label coral-color" style="font-size:12px;clear:both;margin:5px;"><i class="fa fa-exclamation-triangle"></i> &nbsp;All Post Categories need to be visible in order to edit visibility by post.</div>
+							<div data-bind="visible: $root.postsFilteringEnabled()">
+
+								<div class="embedded-option-value" data-bind="click: function(){ post_visibility('hide'); }, css: {selected: post_visibility() == 'hide' }">HIDE...</div>
+								<div class="embedded-option-value" data-bind="click: function(){ post_visibility('show'); }, css: {selected: post_visibility() == 'show' }">SHOW...</div>
+
+								<div class="embedded-option-value-explaination" data-bind="visible: post_visibility() == 'show'">Bars will <b>show on all posts</b> except any Post Exceptions you add below</div>
+								<div class="embedded-option-value-explaination" data-bind="visible: post_visibility() == 'hide'">Bars will <b>not show on any posts</b> except any Post Exceptions you add below</div>
+								<div class="embedded-option-value-explaination actionable" data-bind="visible: !$root.managingPostExceptions(), click: function(){ $root.managingPostExceptions(true); }"><i class="fa fa-plus"></i> Add Post Exceptions</div>
+
+								<ul class="embedded-options-select" data-bind="visible: $root.managingPostExceptions(), foreach: $root.posts, attr: { 'class': ('embedded-options-select ' + $root.settings.post_visibility()) }">
+									<li data-bind="click: $root.togglePostException, css: { selected: $root.postIsExcepted($data) }">
+										<span data-bind="text: post_title"></span>
+										<i class="fa fa-eye"></i>
+										<i class="fa fa-eye-slash"></i>
+									</li>
+								</ul>
+							</div>
+
+							<!--<input class="embedded-option-input" type="textarea" disabled data-bind="value: $root.posts.selected().length > 0 ? $root.posts.selected() : 'No posts selected'" />-->
+						</div>
+
+						<div class="embedded-option" data-bind="if: $root.categories()">
+
+							<div class="embedded-option-label" data-bind="visible: $root.categoryFilteringEnabled()">Post Categories (<span data-bind="text: $root.categories.selectedCount()"></span>/<span data-bind="text: $root.categories().length"></span>)</div>
+							<div class="embedded-option-label faded2x" data-bind="visible: !$root.categoryFilteringEnabled()">Post Categories (N/A)</div>
+
+							<div data-bind="visible: !$root.categoryFilteringEnabled()" class="embedded-option-label coral-color" style="font-size:12px;clear:both;margin:5px;"><i class="fa fa-exclamation-triangle"></i> &nbsp;All Posts need to be visible in order to edit visibility by post category.</div>
+							<div data-bind="visible: $root.categoryFilteringEnabled()">
+
+								<div class="embedded-option-value" data-bind="click: function(){ category_visibility('hide'); }, css: {selected: category_visibility() == 'hide' }">HIDE...</div>
+								<div class="embedded-option-value" data-bind="click: function(){ category_visibility('show'); }, css: {selected: category_visibility() == 'show' }">SHOW...</div>
+
+								<div class="embedded-option-value-explaination" data-bind="visible: category_visibility() == 'show'">Bars will <b>show on posts in all categories</b> except any Category Exceptions you add below</div>
+								<div class="embedded-option-value-explaination" data-bind="visible: category_visibility() == 'hide'">Bars will <b>not show on posts in any categories</b> except any Category Exceptions you add below</div>
+								<div class="embedded-option-value-explaination actionable" data-bind="visible: !$root.managingCategoryExceptions(), click: function(){ $root.managingCategoryExceptions(true); }"><i class="fa fa-plus"></i> Add Post Category Exceptions</div>
+
+								<ul class="embedded-options-select" data-bind="visible: $root.managingCategoryExceptions(), foreach: $root.categories, attr: { 'class': ('embedded-options-select ' + $root.settings.category_visibility()) }">
+									<li data-bind="click: $root.toggleCategoryException, css: { selected: $root.categoryIsExcepted($data) }">
+										<span data-bind="text: name"></span>
+										<i class="fa fa-eye"></i>
+										<i class="fa fa-eye-slash"></i>
+									</li>
+								</ul>
+							</div>
+
+							<!--<input class="embedded-option-input" type="textarea" disabled data-bind="value: $root.posts.selected().length > 0 ? $root.posts.selected() : 'No posts selected'" />-->
+						</div><!--/.embedded-option-->
+
+						<div class="embedded-option">
+							<div class="embedded-option-label">Show Bar on Archive Pages?</div>
+							<div>
+								<div class="embedded-option-value" data-bind="click: function(){ archive_page_visibility('hide'); }, css: {selected: archive_page_visibility() == 'hide' }">HIDE</div>
+								<div class="embedded-option-value" data-bind="click: function(){ archive_page_visibility('show'); }, css: {selected: archive_page_visibility() == 'show' }">SHOW</div>
+							</div>
+						</div><!--/.embedded-option-->
+						
+						<div class="embedded-option">
+							<div class="embedded-option-label">Show Bar on Custom Post Types?</div>
+							<div>
+								<div class="embedded-option-value" data-bind="click: function(){ custom_post_type_visibility('hide'); }, css: {selected: custom_post_type_visibility() == 'hide' }">HIDE</div>
+								<div class="embedded-option-value" data-bind="click: function(){ custom_post_type_visibility('show'); }, css: {selected: custom_post_type_visibility() == 'show' }">SHOW</div>
+							</div>
+						</div><!--/.embedded-option-->
+
+					</div>
+					<div class="help-link"><i class="fa fa-question-circle"></i></div>
+				</div>
+
+				<div class="option-element">
+					<h6>Device Visibility</h6>
+					<p>Show on all devices, or just on desktop <small>(both desktop and laptop computers)</small> or mobile <small>(phones and tablets)</small>.</p>
+					<ul>
+						<li data-bind="click: function(){ device_visibility('all'); }, css: { selected: device_visibility() == 'all' }">ALL DEVICES</li>
+						<li data-bind="click: function(){ device_visibility('desktoponly'); }, css: { selected: device_visibility() == 'desktoponly' }">DESKTOP ONLY</li>
+						<li data-bind="click: function(){ device_visibility('mobileonly'); }, css: { selected: device_visibility() == 'mobileonly' }">MOBILE ONLY</li>
+						</ul>
+					<div class="help-link"><i class="fa fa-question-circle"></i></div>
+				</div>
+
+				<div class="option-element">
+					<h6>Fixed Header Compatibility Mode</h6>
+					<p>Turn this on if your site uses a fixed-positioned header at the top of the page. After enabling, give your fixed-positioned header element the class "<b>qb-fixed-header</b>".<br/><small>If this setting is "ON", bars will be disabled on mobile devices.</small></p>
+					<ul>
+						<li data-bind="click: function(){ fixed_compatibility('off'); }, css: { selected: fixed_compatibility() == 'off' }">OFF</li>
+						<li data-bind="click: function(){ fixed_compatibility('on'); }, css: { selected: fixed_compatibility() == 'on' }">ON</li>
+					</ul>
+					<div class="help-link"><i class="fa fa-question-circle"></i></div>
+				</div>
+
+				<div class="option-element">
+					<h6>Bar Z-Index</h6>
+					<p>Increase this if your bars appear behind the content on your site. Only increase this as high as necessary.</p>
+					<ul>
+						<li data-bind="click: function(){ bar_zindex('100'); }, css: { selected: bar_zindex() == '100' }">100</li>
+						<li data-bind="click: function(){ bar_zindex('1000'); }, css: { selected: bar_zindex() == '1000' }">1000</li>
+						<li data-bind="click: function(){ bar_zindex('10000'); }, css: { selected: bar_zindex() == '10000' }">10000</li>
+						<li data-bind="click: function(){ bar_zindex('100000'); }, css: { selected: bar_zindex() == '100000' }">100000</li>
+						<li data-bind="click: function(){ bar_zindex('1000000'); }, css: { selected: bar_zindex() == '1000000' }">1000000</li>
+					</ul>
+					<div class="help-link"><i class="fa fa-question-circle"></i></div>
+				</div>
+
+				<div class="option-element">
+					<h6>Debug Mode</h6>
+					<p>Turn this on to hide bars on all pages except when #qbshow is specified in the url.</p>
+					<ul>
+						<li data-bind="click: function(){ debug_mode('off'); }, css: { selected: debug_mode() == 'off' }">OFF</li>
+						<li data-bind="click: function(){ debug_mode('on'); }, css: { selected: debug_mode() == 'on' }">ON</li>
+					</ul>
+					<div class="help-link"><i class="fa fa-question-circle"></i></div>
+				</div>
+
+			</div><!--/.qb-options-list-->
+
+			<button style="display:none;" id="save-settings-button" class="coral extra-padding" data-bind="visible: !syncingDataWithServer(), click: saveSettings, enable: settings.dirty(), css: { disabled: !settings.dirty() || savingSettings() }">
+				<span data-bind="visible: !savingSettings()">Save Settings</span>
+				<span data-bind="visible: savingSettings()"><i class="fa fa-spin fa-spinner"></i> &nbsp;Saving...</span>
+			</button>
+
+			<div style="float:left;margin-top:100px;position:relative;width:100%;" class="option-element" data-bind="with: $root">
+				<span style="display:none;cursor:pointer;font-size:12px;border-bottom:1px dotted #AAA;color:#AAA;" data-bind="visible: !deletingPlugin(), click: function(){ deletingPlugin(true); }">Delete all plugin settings & data</span>
+				<div style="display:none;" class="dark-color" style="font-size:16px;padding:20px;position:relative;float:left;border-radius:3px;background:#EEE;border:1px solid #DDD;" data-bind="visible: deletingPlugin()">
+					<div><p>Are you sure you want to remove all plugin data and settings.</p>
+					<p><small>QuickieBar will also be deactivated following deletion.</small></p></div>
+					<button style="position:relative;float:left;clear:both;margin-top:15px;" data-bind="click: destroyPluginData" class="coral tiny">DELETE</button>
+					<button style="position:relative;float:left;clear:none;margin-top:15px;margin-left:20px;" data-bind="visible: deletingPlugin(), click: function(){ deletingPlugin(false); }" class="grey tiny">CANCEL</button>
+					</div>
+			</div>
+
+
+		</div><!--/.qb-main-content-->
+
+		<div class="qb-sidebar-content">
+			<h5>Any Questions?</h5>
+			<p>Open a ticket on <a href="https://quickiebar.com/support" target="_blank">quickiebar.com</a>. We’re always happy to help you get set up and answer any questions you might have.</p>
+			<a href="https://quickiebar.com/support" target="_blank"><button class="barTeal tiny extra-padding">Open a ticket</button></a>
+
+			<a href="https://quickiebar.com/pricing" target="_blank"><div class="qb-sidebar-ad ad1"></div></a>
+		</div><!--/.qb-sidebar-content-->
+
+	</div>
+</div>

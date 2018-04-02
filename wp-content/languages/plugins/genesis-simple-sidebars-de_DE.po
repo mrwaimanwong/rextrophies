@@ -1,0 +1,147 @@
+# Translation of Stable (latest release) in German
+# This file is distributed under the same license as the Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2015-09-30 21:59:37+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/2.1.0-alpha\n"
+"Project-Id-Version: Stable (latest release)\n"
+
+#. Author URI of the plugin/theme
+msgid "http://www.nathanrice.net/"
+msgstr "http://www.nathanrice.net/"
+
+#: includes/admin.php:32 includes/views/main.php:2
+msgid "Genesis - Simple Sidebars"
+msgstr "Genesis - Einfache Sidebars"
+
+#: includes/admin.php:33
+msgid "Simple Sidebars"
+msgstr "Einfache Sidebars"
+
+#: includes/admin.php:107
+msgid "Edit"
+msgstr "Bearbeiten"
+
+#: includes/admin.php:108
+msgid "Delete"
+msgstr "Löschen"
+
+#: includes/admin.php:173
+msgid "New sidebar successfully created!"
+msgstr "Neue Sidebar erfolgreich erstellt!"
+
+#: includes/admin.php:178
+msgid "Sidebar successfully edited!"
+msgstr "Sidebar erfolgreich bearbeitet!"
+
+#: includes/admin.php:183
+msgid "Sidebar successfully deleted."
+msgstr "Sidebar erfolgreich gelöscht."
+
+#: includes/admin.php:319
+msgid "Oops! Please choose a valid Name and ID for this sidebar"
+msgstr "Oops! Bitte wählen Sie einen gültigen Namen und eine gültige ID für diese Sidebar"
+
+#: includes/admin.php:322
+msgid "Oops! That sidebar ID already exists"
+msgstr "Oops! Diese Sidebar-ID existiert bereits"
+
+#: includes/admin.php:325
+msgid "Oops! You are trying to edit a sidebar that does not exist, or is not editable"
+msgstr "Oops! Sie versuchen eine Sidebar zu bearbeiten, die nicht existiert, oder nicht bearbeitet werden kann"
+
+#: includes/admin.php:328
+msgid "Oops! You are trying to delete a sidebar that does not exist, or cannot be deleted"
+msgstr "Oops! Sie versuchen eine Sidebar zu löschen, die nicht existiert oder nicht gelöscht werden kann/ darf"
+
+#: includes/admin.php:331
+msgid "Oops! Something went wrong. Try again."
+msgstr "Oops! Etwas ging schief. Bitte versuchen Sie es noch einmal."
+
+#: includes/inpost.php:12
+msgid "Sidebar Selection"
+msgstr "Sidebar-Auswahl"
+
+#: includes/inpost.php:35 includes/inpost.php:50 includes/term.php:37
+#: includes/term.php:54
+msgid "Default"
+msgstr "Standard"
+
+#: includes/term.php:30
+msgid "Sidebar Options"
+msgstr "Sidebar-Optionen"
+
+#: includes/term.php:34
+msgid "Primary Sidebar"
+msgstr "Haupt-Sidebar (Primary)"
+
+#: includes/term.php:51
+msgid "Secondary Sidebar"
+msgstr "Zweit-Sidebar (Secondary)"
+
+#: includes/views/edit.php:5
+msgid "Nice try, partner. But that sidebar doesn't exist. Click back and try again."
+msgstr "Netter Versuch, doch leider existiert diese Sidebar nicht. Gehen Sie zurück und versuchen Sie es erneut."
+
+#: includes/views/edit.php:9
+msgid "Edit Sidebar"
+msgstr "Sidebar bearbeiten"
+
+#: includes/views/edit.php:17 includes/views/main.php:13
+#: includes/views/main.php:21 includes/views/main.php:48
+msgid "Name"
+msgstr "Name"
+
+#: includes/views/edit.php:19 includes/views/main.php:50
+msgid "A recognizable name for your new sidebar widget area"
+msgstr "Ein passender Name für Ihren neuen Sidebar-Widget-Bereich"
+
+#: includes/views/edit.php:23 includes/views/main.php:14
+#: includes/views/main.php:22 includes/views/main.php:54
+msgid "ID"
+msgstr "ID"
+
+#: includes/views/edit.php:27
+msgid "The unique ID is used to register the sidebar widget area (cannot be changed)"
+msgstr "Die einzigartige ID wird verwendet, um den Sidebar-Widget-Bereich zu registrieren. Diese ID kann nicht verändert werden. Verwenden Sie am besten nur kleinbuchstaben, Bindestriche (Minus) und Zahlen."
+
+#: includes/views/edit.php:31 includes/views/main.php:15
+#: includes/views/main.php:23 includes/views/main.php:60
+msgid "Description"
+msgstr "Beschreibung"
+
+#: includes/views/edit.php:37
+msgid "Update"
+msgstr "Aktualisieren"
+
+#: includes/views/main.php:9
+msgid "Current Sidebars"
+msgstr "Aktuelle Sidebars"
+
+#: includes/views/main.php:42 includes/views/main.php:64
+msgid "Add New Sidebar"
+msgstr "Neue Sidebar hinzufügen"
+
+#: includes/views/main.php:56
+msgid "The unique ID is used to register the sidebar widget area"
+msgstr "Die einzigartige ID wird verwendet, um den neuen Sidebar-Widget-Bereich zu registrieren. Diese ID kann nicht verändert werden. Verwenden Sie am besten nur kleinbuchstaben, Bindestriche (Minus) und Zahlen."
+
+#. Plugin Name of the plugin/theme
+msgid "Genesis Simple Sidebars"
+msgstr "Genesis Einfache Sidebars"
+
+#. Plugin URI of the plugin/theme
+msgid "http://www.studiopress.com/plugins/simple-sidebars"
+msgstr "http://www.studiopress.com/plugins/simple-sidebars"
+
+#. Description of the plugin/theme
+msgid "Genesis Simple Sidebars allows you to easily create and use new sidebar widget areas."
+msgstr "Genesis Einfache Sidebars (Simple Sidebars) erlaubt es auf einfache Art und Weise neue Sidebar-Widget-Bereiche zu erstellen und zu verwenden."
+
+#. Author of the plugin/theme
+msgid "Nathan Rice"
+msgstr "Nathan Rice"

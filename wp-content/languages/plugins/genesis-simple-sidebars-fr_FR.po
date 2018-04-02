@@ -1,0 +1,151 @@
+# Translation of Stable (latest release) in French (France)
+# This file is distributed under the same license as the Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2016-06-17 21:06:12+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: GlotPress/2.1.0-alpha\n"
+"Project-Id-Version: Stable (latest release)\n"
+
+#. Author URI of the plugin/theme
+msgid "http://www.nathanrice.net/"
+msgstr "http://www.nathanrice.net/"
+
+#: includes/admin.php:32 includes/views/main.php:2
+msgid "Genesis - Simple Sidebars"
+msgstr "Genesis - Simple Sidebars"
+
+#: includes/admin.php:33
+msgid "Simple Sidebars"
+msgstr "Simple Sidebars"
+
+#: includes/admin.php:107
+msgid "Edit"
+msgstr "Modifier"
+
+#: includes/admin.php:108
+msgid "Delete"
+msgstr "Supprimer"
+
+#: includes/admin.php:173
+msgid "New sidebar successfully created!"
+msgstr "Nouvelle barre latérale créé avec succès&nbsp;!"
+
+#: includes/admin.php:178
+msgid "Sidebar successfully edited!"
+msgstr "Barre latérale modifée avec succès&nbsp;!"
+
+#: includes/admin.php:183
+msgid "Sidebar successfully deleted."
+msgstr "Barre latérale supprimée avec succès."
+
+#: includes/admin.php:319
+msgid "Oops! Please choose a valid Name and ID for this sidebar"
+msgstr "Oups&nbsp;! Merci de choisir un nom et un identifiant valide pour cette barre latérale"
+
+#: includes/admin.php:322
+msgid "Oops! That sidebar ID already exists"
+msgstr "Oups&nbsp;! L&rsquo;identifiant de cette barre latérale existe déjà"
+
+#: includes/admin.php:325
+msgid "Oops! You are trying to edit a sidebar that does not exist, or is not editable"
+msgstr "Oups&nbsp;! Vous essayez de modifier une barre latérale qui n&rsquo;existe pas, ou est non modifiable"
+
+#: includes/admin.php:328
+msgid "Oops! You are trying to delete a sidebar that does not exist, or cannot be deleted"
+msgstr "Oups&nbsp;! Vous essayez de supprimer une barre latérale qui n&rsquo;existe pas, ou ne peut être supprimée"
+
+#: includes/admin.php:331
+msgid "Oops! Something went wrong. Try again."
+msgstr "Oups&nbsp;! Quelque chose a mal tourné. Réessayer."
+
+#: includes/inpost.php:12
+msgid "Sidebar Selection"
+msgstr "Sélection de barre latérale"
+
+#: includes/inpost.php:35 includes/inpost.php:50 includes/term.php:37
+#: includes/term.php:54
+msgid "Default"
+msgstr "Valeur par défaut"
+
+#: includes/term.php:30
+msgid "Sidebar Options"
+msgstr "Options de barre latérale"
+
+#: includes/term.php:34
+msgid "Primary Sidebar"
+msgstr "Barre latérale principale"
+
+#: includes/term.php:51
+msgid "Secondary Sidebar"
+msgstr "Barre latérale secondaire"
+
+#: includes/views/edit.php:5
+msgid "Nice try, partner. But that sidebar doesn't exist. Click back and try again."
+msgstr "Bien essayé, partenaire. Mais cette barre latérale n'existe pas. Cliquez en arrière et essayez à nouveau."
+
+#: includes/views/edit.php:9
+msgid "Edit Sidebar"
+msgstr "Modifier la barre latérale"
+
+#: includes/views/edit.php:17 includes/views/main.php:13
+#: includes/views/main.php:21 includes/views/main.php:48
+msgid "Name"
+msgstr "Nom"
+
+#: includes/views/edit.php:19 includes/views/main.php:50
+msgid "A recognizable name for your new sidebar widget area"
+msgstr "Un nom reconnaissable pour votre nouvelle zone de widget barre latérale"
+
+#: includes/views/edit.php:23 includes/views/main.php:14
+#: includes/views/main.php:22 includes/views/main.php:54
+msgid "ID"
+msgstr "ID"
+
+#: includes/views/edit.php:27
+msgid "The unique ID is used to register the sidebar widget area (cannot be changed)"
+msgstr "L'identifiant unique est utilisé pour enregistrer la zone de widget de barre latérale (ne peut pas être changé)"
+
+#: includes/views/edit.php:31 includes/views/main.php:15
+#: includes/views/main.php:23 includes/views/main.php:60
+msgid "Description"
+msgstr "Description"
+
+#: includes/views/edit.php:37
+msgid "Update"
+msgstr "Mise à jour"
+
+#: includes/views/main.php:9
+msgid "Current Sidebars"
+msgstr "Barres latérales actuelles"
+
+#: includes/views/main.php:42 includes/views/main.php:64
+msgid "Add New Sidebar"
+msgstr "Ajout de nouvelle barre latérale"
+
+#: includes/views/main.php:56
+msgid "The unique ID is used to register the sidebar widget area"
+msgstr "L&rsquo;identifiant unique est utilisé pour enregistrer la zone de widget de barre latérale"
+
+#: plugin.php:48
+msgid "Sorry, you cannot run Simple Sidebars without WordPress %s and <a href=\"%s\">Genesis %s</a>, or greater."
+msgstr "Désolé, vous ne pouvez pas utiliser Simple Sidebars sans WordPress %s et <a href=\"%s\"> Genesis %s </a>, ou plus récents."
+
+#. Plugin Name of the plugin/theme
+msgid "Genesis Simple Sidebars"
+msgstr "Genesis Simple Sidebars"
+
+#. Plugin URI of the plugin/theme
+msgid "http://www.studiopress.com/plugins/simple-sidebars"
+msgstr "http://www.studiopress.com/plugins/simple-sidebars"
+
+#. Description of the plugin/theme
+msgid "Genesis Simple Sidebars allows you to easily create and use new sidebar widget areas."
+msgstr "Genesis Simple Sidebars vous permet de créer et d'utiliser facilement de nouvelles zones de widget de barre latérale."
+
+#. Author of the plugin/theme
+msgid "Nathan Rice"
+msgstr "Nathan Rice"

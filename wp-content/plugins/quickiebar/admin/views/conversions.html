@@ -1,0 +1,64 @@
+<div id="quickiebar-conversions" class="quickiebar-page">
+	<div class="wrap">
+		
+		<div class="qb-header">
+			<div class="qb-page-icon"></div>
+			<h2 class="qb-header-text">
+				<span class="actionable">Conversions</span>
+			</h2>
+		</div>
+		
+		<div class="qb-main-content" data-bind="css: { 'no-sidebar': !syncingDataWithServer() && bars().length > 0 }">
+		
+			<div class="qb-loading-page-placeholder" data-bind="visible: syncingDataWithServer()">
+				<i class="fa fa-spin fa-spinner" style="font-size:100px;text-align:center;width:100%;padding:100px 0;color:#DDD;"></i>
+			</div>
+			
+			<h2 class="not-enough-data-placeholder" style="display:none;width:100%;line-height:100px;color:#BBB;" data-bind="visible: !syncingDataWithServer() && bars().length == 0">You haven't created any bars yet...</h2>
+			
+			<div style="display:none;" class="qb-chart" data-bind="visible: !syncingDataWithServer() && bars().length > 0">
+				
+				<!--ko if: selectedBar-->
+				<select class="bar-selection" data-bind="options: bars(), optionsText: function(bar){ return unescape(bar.bar_text).substring(0,60); }, value: selectedBar">
+				</select>
+				<!--/ko-->
+				
+				<ul class="data-range-selection">
+					<!--<li data-bind="css: { selected: chartInterval() == 'today' }, click: function(){ chartInterval('today'); }">TODAY</li>-->
+					<li data-bind="css: { selected: chartInterval() == 'week' }, click: function(){ chartInterval('week'); }">WEEK</li>
+					<li data-bind="css: { selected: chartInterval() == 'month' }, click: function(){ chartInterval('month'); }">MONTH</li>
+					<li data-bind="css: { selected: chartInterval() == 'alltime' }, click: function(){ chartInterval('alltime'); }">ALL TIME</li>
+				</ul>
+				<div class="chart-container">
+					<div style="display:none;" class="loading-chart-placeholder" data-bind="visible: loadingConversionData()"><i class="fa fa-spin fa-circle-o-notch"></i></div>
+					<div style="display:none;" class="not-enough-data-placeholder" data-bind="visible: !loadingConversionData() && chartIntervalTotals().conversions == 0"><i class="fa fa-lemon-o"></i><br/>No conversions yet...</div>
+					
+					<!--container for canvas - otherwise canvas ignores padding of parent-->
+					<div style="width:100%;height:100%;">
+						<canvas id="qb-conversion-chart" class="chart-view"></canvas>
+					</div>
+					
+				</div>
+			</div><!--/.qb-chart-->
+			
+			<div style="display:none;" class="qb-chart-summary" data-bind="visible: !syncingDataWithServer() && bars().length > 0">
+				<div class="qb-chart-stat-label"><span data-bind="text: chartInterval() == 'alltime' ? 'Total' : 'New'"></span> Audience</div>
+				<div class="qb-chart-stat-value" data-bind="text: numberWithCommas(chartIntervalTotals().views), css: { faded3x: chartIntervalTotals().views == 0 }"></div>
+				
+				<div class="qb-chart-stat-label"><span data-bind="text: chartInterval() == 'alltime' ? 'Total' : 'New'"></span> Conversions</div>
+				<div class="qb-chart-stat-value" data-bind="text: numberWithCommas(chartIntervalTotals().conversions), css: { faded3x: chartIntervalTotals().conversionRate == 0 }"></div>
+				
+				<div class="qb-chart-stat-label">Conversion Rate</div>
+				<div class="qb-chart-stat-value" data-bind="text: allTimeTotals().conversionRate + '%', css: { faded3x: chartIntervalTotals().conversionRate == 0 }"></div>
+			</div><!--/.qb-chart-summary-->
+			
+		</div><!--/.qb-main-content-->
+		
+		<div class="qb-sidebar-content" data-bind="visible: !syncingDataWithServer() && bars().length == 0">
+			<h5>Any Questions?</h5>
+			<p>Open a ticket on <a href="https://quickiebar.com/support" target="_blank">quickiebar.com</a>. We’re always happy to help you get set up and answer any questions you might have.</p>
+			<a href="https://quickiebar.com/support" target="_blank"><button class="barTeal tiny extra-padding">Open a ticket</button></a>
+		</div><!--/.qb-sidebar-content-->
+		
+	</div>
+</div>

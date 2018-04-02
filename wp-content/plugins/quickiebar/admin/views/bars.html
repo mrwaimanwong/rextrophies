@@ -1,0 +1,369 @@
+<div id="quickiebar" class="qb">
+
+</div>
+<div id="quickiebar-bars" class="quickiebar-page">
+	<div class="wrap">
+
+		<div class="qb-header">
+			<div class="qb-page-icon"></div>
+			<h2 class="qb-header-text">
+				<span class="actionable" data-bind="click: function(){ editingBar(false); }">Bars</span>
+				<span style="display:none;" data-bind="visible: editingBar() && editingBarUuid() == 0"> <small>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;&nbsp;Create New Bar</small></span>
+				<span style="display:none;" data-bind="visible: editingBar() && editingBarUuid() != 0"> <small>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;&nbsp;Edit Bar</small></span>
+			</h2>
+		</div>
+
+		<div class="qb-main-content">
+
+			<div class="qb-loading-page-placeholder" data-bind="visible: syncingDataWithServer() && !editingBar() && bars().length == 0">
+				<i class="fa fa-spin fa-spinner" style="font-size:100px;text-align:center;width:100%;padding:100px 0;color:#DDD;"></i>
+			</div>
+
+			<div style="display:none;" class="qb-no-bars-labels" data-bind="visible: !syncingDataWithServer() && bars().length == 0 && !editingBar()">
+				<h5>You don't have any bars...yet!</h5>
+				<p>Click the button below to create your first conversion bar.</p>
+			</div>
+
+			<ul style="display:none;" class="qb-bars-list" data-bind="foreach: bars.ordered(), visible: bars().length > 0 && !editingBar()">
+				<li>
+					<div class="bar-text" data-bind="style: { backgroundColor:color_bar_background, color: color_bar_text }, html: $root.getBarOrButtonTextAsHtml(bar_text), css: { faded: status != 'live' }"></div>
+					<!--<div class="button-text" data-bind="style: { backgroundColor:color_button_background, color: color_button_text }, html: $root.getBarOrButtonTextAsHtml(button_text)"></div>-->
+
+					<div class="qb-status barGreen-bg" data-bind="visible: status == 'live'"><i class="fa fa-check-circle-o"></i>&nbsp; LIVE</div>
+					<div class="qb-status grey-bg" data-bind="visible: status == 'paused'"><i class="fa fa-circle-o"></i>&nbsp; PAUSED</div>
+
+					<ul class="qb-stats" data-bind="css: { faded: status != 'live' }">
+						<li><div class="stat"data-bind="text: numberWithCommas(conversions), css: { faded3x: conversions == 0 }">0</div><div class="label">Conversions</div></li>
+						<li><div class="stat" data-bind="text: numberWithCommas(views), css: { faded3x: views == 0 }">0</div><div class="label">Viewers</div></li>
+						<li><div class="stat"data-bind="text: $root.getFormattedConversionRate(conversions, views) + '%', css: { faded3x: conversions == 0 }">0.0%</div><div class="label">Conversion Rate</div></li>
+					</ul>
+
+					<ul class="qb-actions" data-bind="visible: !$root.syncingDataWithServer()">
+						<li data-bind="click: $parent.pauseBar, visible: status == 'live'"><i class="fa fa-pause"></i></li>
+						<li data-bind="click: $parent.resumeBar, visible: status == 'paused'"><i class="fa fa-play"></i></li>
+						<li data-bind="click: $parent.beginEditingBar"><i class="fa fa-pencil"></i></li>
+						<a data-bind="attr: { href: '?page=quickiebar-conversions#' + bar_uuid }"><li><i class="fa fa-area-chart"></i></li></a>
+					</ul>
+					<ul class="qb-actions" data-bind="visible: $root.syncingDataWithServer()">
+						<li><i class="fa fa-spin fa-spinner"></i></li>
+					</ul>
+				</li>
+			</ul>
+
+			<button id="create-new-bar" style="display:none;" class="qb-button-coral large extra-padding" data-bind="visible: !syncingDataWithServer() && !editingBar() && bars().length == 0, click: function(){ editingBar(true); }"><i class="fa fa-plus-square-o"></i> &nbsp;Create a new bar</button>
+			<button id="create-new-bar" style="display:none;margin-right:5%;float:right;" class="qb-button-coral medium" data-bind="visible: !syncingDataWithServer() && !editingBar() && bars().length > 0, click: function(){ editingBar(true); }"><i class="fa fa-plus-square-o"></i> &nbsp;Create a new bar</button>
+
+			<div style="display:none;" class="edit-bar-form" data-bind="visible: editingBar()">
+
+
+				<div class="section">
+					<div class="section-title">BASIC SETTINGS</div>
+					<div class="qb-settings-fields">
+						<div class="qb-settings-field">
+							<input type="text" placeholder="Bar Text" data-bind="value: barOptions.bar_text, valueUpdate: 'keyup'"/>
+							<button tabindex="-1" class="grey tiny" data-bind="click: function(){ $root.pickingIconForField('bar'); }"><i class="fa fa-paper-plane-o"></i> &nbsp;INSERT ICON</button>
+						</div>
+						<div class="qb-settings-field">
+							<i class="warning-icon fa fa-exclamation-triangle qb-tooltip" data-bind="visible: barOptions.button_text() == ''" title="Specify Button Text to add a button to your bar"></i>
+							<input type="text" placeholder="Button Text" data-bind="value: barOptions.button_text, valueUpdate: 'keyup'"/>
+							<button tabindex="-1" class="grey tiny" data-bind="click: function(){ $root.pickingIconForField('button'); }"><i class="fa fa-paper-plane-o"></i> &nbsp;INSERT ICON</button>
+						</div>
+						<div class="qb-settings-field">
+							<i class="warning-icon fa fa-exclamation-triangle qb-tooltip" data-bind="visible: barOptions.destination() == ''" title="Specify a Destination URL to send visitors somewhere when they click your bar"></i>
+							<input type="text" placeholder="Button Destination URL" data-bind="value: barOptions.destination, valueUpdate: 'keyup'"/>
+							<a href="" target="_blank" data-bind="attr: { href: destinationAsLink() }"><button data-bind="enable: barOptions.destination().length > 3, css: { disabled: barOptions.destination().length <= 3 }" class="grey tiny"><i class="fa fa-unlink"></i> &nbsp;TEST LINK</button></a>
+						</div>
+
+						<!--
+						<div class="qb-warning-field"><i class="fa fa-exclamation-triangle"></i> &nbsp;Specify Button Text to </div>
+						<div class="qb-warning-field"><i class="fa fa-exclamation-triangle"></i> &nbsp;Specify Button Text to </div>
+						-->
+					</div>
+				</div>
+
+				<!--<div class="section">
+					<div class="section-title">PREVIEW</div>
+					<div id="qb-bar-preview" data-bind="style: { backgroundColor: barColors().barBackground }">
+						<div class="text" data-bind="style: { color: barColors().barText }, html: barOptions.bar_text() ? getBarOrButtonTextAsHtml(barOptions.bar_text()) : 'Get the most powerful conversion bar for WordPress &nbsp;<i class=\'fa fa-arrow-right\'></i>&nbsp;'"></div>
+						<div class="button" data-bind="style: { backgroundColor: barColors().buttonBackground, color: barColors().buttonText }, html: barOptions.button_text() ? getBarOrButtonTextAsHtml(barOptions.button_text()) : 'DOWNLOAD FREE &nbsp;<i class=\'fa fa-download\'></i>'"> &nbsp;<i class="fa fa-download"></i></div>
+					</div>
+				</div>-->
+				<div class="divider"></div>
+				<div class="section">
+					<div class="section-title">COLORS</div>
+					<div id="qb-color-options">
+						<div class="qb-color-option" data-bind="visible: !previewColor()">
+							<div class="sample" data-bind="style: {backgroundColor: barOptions.color_bar_background()}"></div>
+							<input class="option-value" data-bind="value: barOptions.color_bar_background"/>
+							<div class="option-name">Background</div>
+						</div>
+						<div class="qb-color-option" data-bind="visible: !previewColor()">
+							<div class="sample" data-bind="style: {backgroundColor: barOptions.color_bar_text()}"></div>
+							<input class="option-value" data-bind="value: barOptions.color_bar_text" />
+							<div class="option-name">Text</div>
+						</div>
+						<div class="qb-color-option" data-bind="visible: !previewColor(), css: { 'faded2x': barOptions.button_text() == ''}">
+							<div class="sample" data-bind="style: {backgroundColor: barOptions.color_button_background()}"></div>
+							<input class="option-value" data-bind="value: barOptions.color_button_background" />
+							<div class="option-name">Button Background</div>
+						</div>
+						<div class="qb-color-option" data-bind="visible: !previewColor(), css: { 'faded2x': barOptions.button_text() == ''}">
+							<div class="sample" data-bind="style: {backgroundColor: barOptions.color_button_text()}"></div>
+							<input class="option-value" data-bind="value: barOptions.color_button_text" />
+							<div class="option-name">Button Text</div>
+						</div>
+
+						<!--user is previewing a preset color combination-->
+						<div class="qb-color-option" data-bind="visible: previewColor()">
+							<div class="sample" data-bind="style: {backgroundColor: barOptions.color_bar_background()}"></div>
+							<input id="cp-bar-background" class="option-value" data-bind="value: barOptions.color_bar_background"/>
+							<div class="option-name">Background</div>
+						</div>
+						<div class="qb-color-option" data-bind="visible: previewColor()">
+							<div class="sample" data-bind="style: {backgroundColor: barOptions.color_bar_text()}"></div>
+							<input id="cp-bar-text" class="option-value" data-bind="value: barOptions.color_bar_text" />
+							<div class="option-name">Text</div>
+						</div>
+						<div class="qb-color-option" data-bind="visible: previewColor(), css: { 'faded2x': barOptions.button_text() == ''}">
+							<div class="sample" data-bind="style: {backgroundColor: barOptions.color_button_background()}"></div>
+							<input id="cp-button-background" class="option-value" data-bind="value: barOptions.color_button_background" />
+							<div class="option-name">Button Background</div>
+						</div>
+						<div class="qb-color-option" data-bind="visible: previewColor(), css: { 'faded2x': barOptions.button_text() == ''}">
+							<div class="sample" data-bind="style: {backgroundColor: barOptions.color_button_text()}"></div>
+							<input id="cp-button-text" class="option-value" data-bind="value: barOptions.color_button_text" />
+							<div class="option-name">Button Text</div>
+						</div>
+					</div>
+
+					<div id="qb-color-presets">
+						<div class="presets-label">PRESETS</div>
+						<ul class="presets" data-bind="foreach: barColorPresets">
+							<li data-bind="click: $root.selectColorPreset, event: {mouseover: function(){ $root.previewColor($data); }, mouseout: function(){ $root.previewColor(false); } }">
+								<div class="bar-color" data-bind="style: { backgroundColor: bar_background }"></div>
+								<div class="button-color" data-bind="style: { backgroundColor: button_background }"></div>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<!--<div class="divider"></div>
+				<div class="section">
+					<div class="section-title">BAR TYPE</div>
+					<div class="qb-options-list" data-bind="visible: showingAdditionalOptions(), with: barOptions">
+						<div class="option-element">
+							<h6>Bar Type</h6>
+							<p>Do you want to drive traffic to a link or build an email list?</p>
+							<ul>
+								<li data-bind="click: function(){ bar_type('traffic'); }, css: { selected: bar_type() == 'traffic' }">DRIVE TRAFFIC</li>
+								<li data-bind="click: function(){ bar_type('list'); }, css: { selected: bar_type() == 'list' }">BUILD LIST <span class="badge">(PRO)</span></li>
+							</ul>
+							<div class="help-link"><i class="fa fa-question-circle"></i></div>
+						</div>
+					</div>
+				</div>-->
+
+				<div class="divider"></div>
+				<div class="section">
+					<div class="section-title">
+						<span class="actionable" data-bind="visible: !showingAdditionalOptions(), click: function(){ showingAdditionalOptions(true); }">SHOW ADDITIONAL OPTIONS</span>
+						<span data-bind="visible: showingAdditionalOptions(), click: function(){ showingAdditionalOptions(true); }">ADDITIONAL OPTIONS<br/><br/></span>
+						<!--<small style="cursor:pointer;font-size:14px;" data-bind="visible: showingAdditionalOptions(), click: function(){ alwaysShowAdditionalOptions(!alwaysShowAdditionalOptions()); }"><i class="fa fa-fw fa-check-square-o" data-bind="visible: alwaysShowAdditionalOptions()"></i><i class="fa fa-fw fa-square-o" data-bind="visible: !alwaysShowAdditionalOptions()"></i> &nbsp;always show these options</small>-->
+						<!--<small style="cursor:pointer;font-size:13px;" data-bind="visible: showingAdditionalOptions(), click: function(){ showingAdditionalOptions(false); }">HIDE ADDITIONAL OPTIONS</small>-->
+					</div>
+					<div class="qb-options-list" data-bind="visible: showingAdditionalOptions(), with: barOptions">
+						<div class="option-element">
+							<h6>Bar Style</h6>
+							<p>Do you prefer your bar skinny, thin, tall, or just regular height?</p>
+							<ul>
+								<li data-bind="click: function(){ bar_height('skinny'); }, css: { selected: bar_height() == 'skinny' }">SKINNY</li>
+								<li data-bind="click: function(){ bar_height('thin'); }, css: { selected: bar_height() == 'thin' }">THIN</li>
+								<li data-bind="click: function(){ bar_height('regular'); }, css: { selected: bar_height() == 'regular' }">REGULAR</li>
+								<li data-bind="click: function(){ bar_height('tall'); }, css: { selected: bar_height() == 'tall' }">TALL</li>
+							</ul>
+							<div class="help-link"><i class="fa fa-question-circle"></i></div>
+						</div>
+
+						<div class="option-element">
+							<h6>New Tab</h6>
+							<p>When the user clicks your button, should they be taken to the URL in a new tab or the current tab?</p>
+							<ul>
+								<li data-bind="click: function(){ new_tab('enabled'); }, css: { selected: new_tab() == 'enabled' }">NEW TAB</li>
+								<li data-bind="click: function(){ new_tab('disabled'); }, css: { selected: new_tab() == 'disabled' }">CURRENT TAB</li></ul>
+							<div class="help-link"><i class="fa fa-question-circle"></i></div>
+						</div>
+						
+						<div class="option-element">
+							<h6>Placement</h6>
+							<p>Do you want your bar to show on the top or bottom of the page (only applies to desktop).</p>
+							<ul>
+								<li data-bind="click: function(){ placement('top'); }, css: { selected: placement() == 'top' }">TOP</li>
+								<li data-bind="click: function(){ placement('bottom'); }, css: { selected: placement() == 'bottom' }">BOTTOM</li>
+							</ul>
+							<div class="help-link"><i class="fa fa-question-circle"></i></div>
+						</div>
+						<!--<div class="option-element">
+							<h6>Devices</h6>
+							<p>Desktop, mobile, or both.</p>
+							<ul>
+								<li data-bind="click: function(){ devices('all'); }, css: { selected: devices() == 'all' }">BOTH</li>
+								<li data-bind="click: function(){ devices('desktoponly'); }, css: { selected: devices() == 'desktoponly' }">DESKTOP ONLY</li>
+								<li data-bind="click: function(){ devices('mobileonly'); }, css: { selected: devices() == 'mobileonly' }">MOBILE ONLY</li>
+								</ul>
+							<div class="help-link"><i class="fa fa-question-circle"></i></div>
+						</div>-->
+						<div class="option-element">
+							<h6>Alignment</h6>
+							<p>Should the text align left and the button align right, or should the entire content be centered on the page?</p>
+							<ul>
+								<li data-bind="click: function(){ alignment('centered'); }, css: { selected: alignment() == 'centered' }">CENTERED</li>
+								<li data-bind="click: function(){ alignment('leftright'); }, css: { selected: alignment() == 'leftright' }">LEFT/RIGHT</li>
+							</ul>
+							<div class="help-link"><i class="fa fa-question-circle"></i></div>
+						</div>
+						<div class="option-element">
+							<h6>Sticky</h6>
+							<p>Should the bar "stick" to the top of the page when the user scrolls down <small>(Only applies to top placed bars)</small></p>
+							<ul data-bind="css: { 'faded3x': placement() == 'bottom' }">
+								<li data-bind="click: function(){ if(placement() == 'top'){ sticky('enabled'); } }, css: { selected: placement() == 'bottom' || sticky() == 'enabled' }">ENABLED</li>
+								<li data-bind="click: function(){ if(placement() == 'top'){ sticky('disabled'); } }, css: { selected: placement() == 'top' && sticky() == 'disabled' }">DISABLED</li>
+							</ul>
+							<div class="help-link"><i class="fa fa-question-circle"></i></div>
+						</div>
+						<!--Remove the ability to disable the animation for first release until requested by users and until verified that it looks appropriate when loaded form most WordPress sites-->
+						<!--<div class="option-element">
+							<h6>Animation</h6>
+							<p>Should the bar animate when it is shown?</p>
+							<ul>
+								<li data-bind="click: function(){ animation('slidein'); }, css: { selected: animation() == 'slidein' }">SLIDE IN</li>
+								<li data-bind="click: function(){ animation('none'); }, css: { selected: animation() == 'none' }">NONE</li>
+							</ul>
+							<div class="help-link"><i class="fa fa-question-circle"></i></div>
+						</div>-->
+						<div class="option-element">
+							<h6>Conversion Button Style</h6>
+							<p>How should the conversion button be formatted?</p>
+							<ul>
+								<li data-bind="click: function(){ button_style('rounded'); }, css: { selected: button_style() == 'rounded' }">ROUNDED</li>
+								<li data-bind="click: function(){ button_style('pill'); }, css: { selected: button_style() == 'pill' }">PILL</li>
+								<li data-bind="click: function(){ button_style('square'); }, css: { selected: button_style() == 'square' }">SQUARE</li>
+								<li data-bind="click: function(){ button_style('outline'); }, css: { selected: button_style() == 'outline' }">OUTLINE</li>
+							</ul>
+							<div class="help-link"><i class="fa fa-question-circle"></i></div>
+						</div>
+						<div class="option-element">
+							<h6>Close Button Visibility</h6>
+							<p>When should the close button be visible</p>
+							<ul>
+								<li data-bind="click: function(){ close_button_visibility('onhover'); }, css: { selected: close_button_visibility() == 'onhover' }">ON HOVER</li>
+								<li data-bind="click: function(){ close_button_visibility('alwaysshow'); }, css: { selected: close_button_visibility() == 'alwaysshow' }">ALWAYS SHOW</li>
+								<li data-bind="click: function(){ close_button_visibility('alwayshide'); }, css: { selected: close_button_visibility() == 'alwayshide' }">ALWAYS HIDE</li>
+							</ul>
+							<div class="help-link"><i class="fa fa-question-circle"></i></div>
+						</div>
+
+					</div>
+				</div>
+				<div class="divider"></div>
+
+				<!--Default Actions-->
+				<div class="actions" data-bind="visible: !deletingBar()">
+					<!--<input type="text" placeholder="Give this bar a name"/>-->
+					<div class="cancel-action" data-bind="click: function(){ editingBar(false); }">Cancel</div>
+					<div class="delete-action" data-bind="visible: editingBarUuid() != 0, click: function(){ deletingBar(true); }">Delete</div>
+
+					<!--Create & Publish New Bar-->
+					<button class="barGreen extra-padding" data-bind="visible: editingBarUuid() == 0, click: createNewBarAndPublish, enable: barOptionsAreValid(), css: { disabled: !barOptionsAreValid() }">
+						<span data-bind="visible: !syncingDataWithServer() || (syncingDataWithServer() && !publishingBar())">Create & Publish</span>
+						<span data-bind="visible: syncingDataWithServer() && publishingBar()"><i class="fa fa-spin fa-spinner"></i> &nbsp;Creating & Publishing...</span>
+					</button>
+
+					<!--Create New Bar-->
+					<button class="coral extra-padding" data-bind="visible: editingBarUuid() == 0, click: createNewBar, enable: barOptionsAreValid(), css: { disabled: !barOptionsAreValid() }">
+						<span data-bind="visible: !syncingDataWithServer() || (syncingDataWithServer() && publishingBar())">Create</span>
+						<span data-bind="visible: syncingDataWithServer() && !publishingBar()"><i class="fa fa-spin fa-spinner"></i> &nbsp;Creating...</span>
+					</button>
+
+					<!--Save & Publish Existing Bar-->
+					<button class="barGreen extra-padding" data-bind="visible: editingBarUuid() != 0 && !currentlyEditingBarIsLive(), click: saveBarChangesAndPublishBar, enable: barOptionsAreValid(), css: { disabled: !barOptionsAreValid() || syncingDataWithServer() }">
+						<span data-bind="visible: !syncingDataWithServer() || (syncingDataWithServer() && !publishingBar())">Save & Publish</span>
+						<span data-bind="visible: syncingDataWithServer() && publishingBar()"><i class="fa fa-spin fa-spinner"></i> &nbsp;Saving & Publishing...</span>
+					</button>
+
+					<!--Save Existing Bar-->
+					<button class="coral extra-padding" data-bind="visible: editingBarUuid() != 0, click: saveBarChanges, enable: barOptionsAreValid(), css: { disabled: !barOptionsAreValid() || syncingDataWithServer() }">
+						<span data-bind="visible: !syncingDataWithServer() || (syncingDataWithServer() && publishingBar())">Save</span>
+						<span data-bind="visible: syncingDataWithServer() && !publishingBar()"><i class="fa fa-spin fa-spinner"></i> &nbsp;Saving...</span>
+					</button>
+
+
+					<button data-bind="click: previewBarOptions" class="outline extra-padding">Live Preview</button>
+				</div>
+
+				<!--Deleting Actions-->
+				<div class="actions coral-bg" data-bind="visible: deletingBar()">
+					<div class="cancel-action" style="color:#FFFFFF !important;" data-bind="click: function(){ deletingBar(false); }">Cancel</div>
+					<button data-bind="click: deleteBar" class="outline white extra-padding">
+						<span data-bind="visible: !syncingDataWithServer()"><i class="fa fa-trash-o"></i> &nbsp;Delete Forever</span>
+						<span data-bind="visible: syncingDataWithServer()"><i class="fa fa-spin fa-spinner"></i> &nbsp;Deleting...</span>
+					</button>
+				</div>
+			</div>
+
+		</div><!--/.qb-main-content-->
+
+		<div class="qb-sidebar-content">
+			<h5>Any Questions?</h5>
+			<p>Open a ticket on <a href="https://quickiebar.com/support" target="_blank">quickiebar.com</a>. We’re always happy to help you get set up and answer any questions you might have.</p>
+			<a href="https://quickiebar.com/support" target="_blank"><button class="barTeal tiny extra-padding">Open a ticket</button></a>
+
+			<a href="https://quickiebar.com/pricing" target="_blank"><div class="qb-sidebar-ad ad2"></div></a>
+		</div><!--/.qb-sidebar-content-->
+
+	</div>
+
+	<div id="qb-icon-picker" style="display:none;" data-bind="visible: pickingIconForField">
+		<div class="qb-icon-search">
+			<input type="text" placeholder="Search icons..." data-bind="value: faSearchText, valueUpdate: 'keyup'"/>
+			<i class="fa fa-times" data-bind="click: function(){ faSearchText(''); }"></i>
+		</div>
+		<div class="qb-icon-container">
+			<ul data-bind="foreach: filteredIcons">
+				<li data-bind="click: $root.insertIcon"><i class="fa" data-bind="attr: { 'class': 'fa fa-fw fa-' + $data }"></i><br/><span data-bind="text: $data"></span></li>
+			</ul>
+
+			<h6 style="display:none;width:100%;text-align:center;line-height:45px;" data-bind="visible: filteredIcons().length == 0">Whoops, we couldn't find any icons matching "<span data-bind="text: faSearchText()"></span>"<br/><small>Maybe try something a little less...weird?</small></h6>
+		</div>
+		<button data-bind="click: function(){ pickingIconForField(false); }" class="outline jumbo extra-padding">CANCEL</button>
+	</div>
+
+
+	<div id="qb-modal" style="display:none;" data-bind="fadeVisible: upgradeModalIsVisible()">
+
+		<div class="qb-modal-overlay" data-bind="click: function(){ upgradeModalIsVisible(false); }"></div>
+
+		<div class="centeringWrap verticalCentering" data-bind="click: function(){ upgradeModalIsVisible(false); }">
+			<div class="qb-modal-content centeredWrap" data-bind="click: function(data, e){ e.stopImmediatePropagation(); }">
+
+				<div class="qb-modal-title">
+					<div class="qb-icon"></div>
+					<div class="qb-modal-close" data-bind="click: function(){ upgradeModalIsVisible(false); }"><i class="fa fa-times"></i></div>
+				</div><!--/.mb-modal-title-->
+
+				<div class="qb-modal-body">
+					<p><span style="background:rgb(235,235,235);padding:2px 6px;border-radius:3px;" data-bind="text: replacedBarText"></span> has been paused to make room for the bar you just published.</p>
+					<p>You can upgrade to PRO to run multiple bars at once.</p>
+				</div>
+
+				<div class="qb-modal-actions">
+					<button class="coral small" data-bind=" click: function(){ upgradeModalIsVisible(false); }">GOT IT</button>
+					<button class="outline small" data-bind="click: function(){ window.open('https://quickiebar.com/pricing', '_blank'); }"><i class="fa fa-bolt"></i> &nbsp;UPGRADE TO PRO</button>
+					<!--For free-->
+					<!--<div class="cancel-action" style="float:right;margin-right:0;font-size:13px;"><i class="fa fa-gift"></i> &nbsp;Upgrade to PRO</div>-->
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+</div>

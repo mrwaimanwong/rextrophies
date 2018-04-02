@@ -1,0 +1,300 @@
+.qb-options-list{
+	padding-top:15px;
+	cursor:default;
+	
+	.option-element{
+		position:relative;float:left;clear:both;
+		margin:25px 0 0 0;
+	}
+	
+	h6,p{
+		margin:0 0 5px 0;
+	}
+
+	h6{
+	}
+	p{
+
+	}
+	input[type="text"]{
+		padding:6px 12px;
+		line-height:22px;
+	}
+	
+	ul:not(.embedded-options-select){
+		position:relative;
+		float:left;
+		clear:none;
+		list-style:none;
+
+		margin:5px 0 10px 0;
+
+		li{
+			width:120px;
+			height:30px;
+			.rounded-corners(5px);
+			line-height:30px;
+			text-align:center;
+			margin:0 5px 0 0;
+
+			position:relative;float:left;clear:none;
+			list-style:none;
+
+			font-family:@buttonFont;
+			font-size:12px;
+
+			border:2px solid @dark;
+			color:@dark;
+			opacity:.44;
+
+			.transition();
+
+			&.selected{
+				opacity:1;
+			}
+
+			&:hover:not(.selected){
+				cursor:pointer;
+				opacity:.67;
+			}
+
+			small{
+				position:absolute;
+				top:15px;
+				left:0;
+				width:100%;
+				font-size:10px;
+				text-align:center;
+			}
+		}
+	}
+	
+	ul.embedded-options-select{
+		width:100%;
+		margin:5px;
+		background:#FFF;
+		
+		float:right;
+		padding:10px;
+		.paddingSubtractsFromWidth();
+		
+		border:1px solid #DDD;
+		.rounded-corners(5px);
+		
+		height:200px;
+		overflow-y:auto;
+		
+		&.hide{
+			
+			i.fa-eye-slash{
+				opacity:.25;
+			}
+			i.fa-eye{
+				display:none;
+			}
+			
+			li.selected{
+				i.fa-eye{
+					display:block;
+				}
+				i.fa-eye-slash{
+					display:none;
+					opacity:0;
+				}
+			}
+			
+			li.selected{
+				color:@barGreen;
+				background:fade(@barGreen, 15%);
+				
+				i{
+					opacity:1;
+					color:@barGreen;
+				}
+			}
+		}
+		&.show{
+			
+			i.fa-eye{
+				opacity:.25;
+			}
+			i.fa-eye-slash{
+				display:none;
+			}
+			
+			li.selected{
+				i.fa-eye-slash{
+					display:block;
+				}
+				i.fa-eye{
+					display:none;
+					opacity:0;
+				}
+			}
+			
+			li.selected{
+				color:@barRed;
+				background:fade(@barRed, 15%);
+				
+				i{
+					opacity:1;
+					color:@barRed;
+				}
+			}
+		}
+		
+		li{
+			list-style:none;
+			width:100%;
+			position:relative;float:left;clear:none;
+			
+			color:#999;
+			
+			font-size:12px;
+			line-height:20px;
+			
+			padding:4px;
+			margin:0px;
+			.paddingSubtractsFromWidth();
+			
+			cursor:pointer;
+			
+			&:hover:not(.selected){
+				color:#777;
+				
+				i{
+					opacity:.5;
+				}
+			}
+			
+			i{
+				font-size:14px;
+				margin-right:5px;
+				
+				opacity:0;
+				float:right;
+				line-height:20px;
+				color:#777;
+				
+				.transition();
+			}
+		}
+	}
+	
+	.embedded-options{
+		position:relative;float:left;clear:both;
+		width:600px;
+		margin:15px;
+		
+		background:rgba(0,0,0,.02);
+		.rounded-corners(5px);
+		padding:15px;
+		
+		.embedded-option{
+			width:100%;
+			position:relative;float:left;clear:both;
+			list-style:none;
+			
+			padding:10px 0;
+			
+			.embedded-option-label,.embedded-option-value,.embedded-option-input{
+				position:relative;float:left;clear:none;
+			}
+			.embedded-option-label{
+				line-height:30px;
+			}
+			.embedded-option-value{
+				position:relative;
+				float:right;
+				
+				font-size:12px;
+				.rounded-corners(3px);
+				border:2px solid @dark;
+				padding:4px 10px;
+				
+				margin:0 5px;
+				
+				opacity:.44;
+				
+				&.selected{
+					opacity:1;
+				}
+
+				&:hover:not(.selected){
+					cursor:pointer;
+					opacity:.67;
+				}
+				
+			}
+			.embedded-option-input,.embedded-option-select{
+				width:100%;
+				clear:both;
+				margin:5px;
+				
+				float:right;
+				
+				background:rgba(255,255,255,.5);
+				border:1px solid #DDD;
+				.rounded-corners(3px);
+				padding:10px;
+			}
+			.embedded-option-select{
+				height:200px;
+			}
+			.embedded-option-value-explaination{
+				position:relative;float:left;clear:both;
+				font-size:12px;
+				color:@dark;
+				opacity:.65;
+				margin:5px 0 10px 0;
+				
+				b{
+					font-weight:bold;
+					font-size:.8rem;
+					text-transform:uppercase;
+				}
+			}
+			
+			h6{
+				border-bottom:1px solid #DDD;
+				padding-bottom:25px;
+				font-size:13px;
+				width:100%;
+				text-align:center;
+				font-weight:bold;
+			}
+			
+			&.btn-outline{
+				padding:5px 10px;
+				outline:2px solid @dark;
+			}
+			
+		}
+		
+	}
+	
+	.help-link{
+		display:none;//for now while no help links are added TODO add help links..
+		
+		position:relative;float:left;clear:none;
+		line-height:30px;
+		font-size:16px;
+		
+		margin:5px 10px;
+		
+		i{
+			line-height:30px;
+		}	
+		
+		color:@dark;
+		
+		opacity:.25;
+		
+		.transition();
+		
+		&:hover{
+			cursor:pointer;
+			opacity:.85;
+		}
+	}
+}

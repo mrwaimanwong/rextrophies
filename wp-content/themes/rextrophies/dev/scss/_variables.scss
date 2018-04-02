@@ -1,0 +1,16 @@
+/* ## Variables
+-----------------------------------------------*/
+
+$font-stack-primary:    "Work Sans", sans-serif;
+
+$color-primary: #7a1128;
+$color-primary-dark: darken(desaturate($color-primary, 20), 20);
+$color-primary-light: lighten(desaturate($color-primary, 5), 5);
+
+$color-secondary: #fec658;
+
+$color-gray-dark: #191c21;
+$color-gray-medium: lighten($color-gray-dark, 10);
+$color-gray-light: lighten($color-gray-dark, 50);
+
+$shadow-primary: 1px 1px rgba(0, 0, 0, .75);

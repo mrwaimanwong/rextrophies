@@ -1,0 +1,67 @@
+/* ## Mixins
+-----------------------------------------------*/
+
+//Rem Font Sizing
+
+@mixin font-size($sizeValue: 1.6) {
+  font-size: ($sizeValue * 10) + px;
+  font-size: $sizeValue + rem;
+}
+
+@mixin bp($point) {
+
+  @if $point == grandpa-bear {
+  	@media only screen and (max-width: 1280px){ @content; }
+  }
+
+  @else if $point == papa-bear {
+  	@media only screen and (max-width: 1023px){ @content; }
+  }
+
+  @else if $point == mama-bear {
+    @media only screen and (max-width: 880px){ @content; }
+  }
+
+  @else if $point == baby-bear {
+    @media only screen and (max-width: 600px){ @content; }
+  }
+
+  @else if $point == tiny-bear {
+    @media only screen and (max-width: 480px){ @content; }
+  }
+
+  @else if $point == extra-tiny-bear {
+    @media only screen and (max-width: 320px){ @content; }
+  }
+
+}
+
+@mixin headline_style () {
+	text-align: center;
+	margin-bottom: 50px;
+	&:after {
+	content: "";
+	display: block;
+	width: 68px;
+	height: 4px;
+	background: #ccc;
+	margin: 10px auto 0;
+	}
+}
+
+@mixin short_underline_headline_style() {
+	text-align: center;
+	&:after {
+		content: "";
+		display: block;
+		width: 68px;
+		height: 4px;
+		background: $color-secondary;
+		margin: 10px auto 0;
+		// box-shadow: $shadow-primary;
+
+		@include bp(papa-bear) {
+			display: none;
+		}
+	}
+}

@@ -1,0 +1,343 @@
+#quickiebar-bars{
+	
+	//add extra margin at bottom for previer bar in bottom location (for some reason, body doesn't respond well to margin-bottom)
+	margin-bottom:50px;
+	
+	#create-new-bar{
+		margin-top:25px;
+	}
+	
+	.edit-bar-form{
+		position:relative;
+		float:left;
+		
+		background:rgba(255,255,255,.5);
+		
+		width:90%;
+		margin:25px 5%;
+		
+		min-height:300px;
+		.rounded-corners(5px);
+		
+		border:1px solid #DDD;
+		
+		.section,.divider{
+			position:relative;
+			float:left;
+			clear:both;
+			width:100%;
+		}
+		
+		.section{
+			padding:15px;
+			min-height:60px;
+			
+			.paddingSubtractsFromWidth();
+			
+			.section-title{
+				width:100%;
+				text-align:center;
+				padding:5px 0;
+				font-size:16px;
+				color:#AAA;
+				font-family:@buttonFont;
+				
+				.actionable{
+					cursor:pointer;
+					border-bottom:1px dashed #CCC;
+					
+					.transition();
+					
+					opacity:.80;
+					
+					&:hover{
+						opacity:1;
+					}
+				}
+			}
+		}
+		.divider{
+			height:0px;
+			border-bottom:1px solid #DDD;
+			width:100%;
+		}
+		.actions{
+			width:100%;
+			position:relative;
+			float:left;
+			padding:15px;
+			.paddingSubtractsFromWidth();
+			
+			.cancel-action,.delete-action{
+				position:relative;
+				float:left;
+				line-height:50px;
+				margin:0 20px;
+				
+				color:fade(@dark, 70%);
+				
+				opacity:.75;
+				&:hover{
+					cursor:pointer;
+					opacity:1;
+				}
+				
+				&.delete-action{
+					color:fade(@barRed, 50%);
+				}
+			}
+			
+			> button{
+				position:relative;
+				float:right;
+				margin:0 0 0 20px;
+			}
+			
+			> input{
+				.no-shadow();
+				outline:none;
+				border:none;
+				background:none;
+				border-bottom:1px solid #DDD;
+				height:50px;
+				padding:15px;
+				line-height:20px;
+				font-size:17px;
+				color:@dark;
+			}
+		}
+		
+		#qb-color-options{
+			position:relative;float:left;clear:none;
+			margin-top:25px;
+			width:50%;
+			
+			.qb-color-option{
+				
+				position:relative;
+				float:left;
+				clear:both;
+				margin:5px;
+				height:30px;
+				
+				.rounded-corners(15px);
+				background:#FFF;
+				
+				.sample,.option-name,.option-value{
+					position:relative;
+					float:left;
+					clear:none;
+					margin:0;
+				}
+				.sample{
+					width:30px;
+					height:30px;
+					.rounded-corners(15px);
+					border:1px solid #DDD;
+					
+					cursor:pointer;
+					
+					opacity:.90;
+					
+					&:hover{
+						opacity:1;
+					}
+				}
+				.option-value{
+					width:90px;
+					outline:none;
+					border:none;
+					background:transparent;
+					height:30px;
+				}
+				.option-name{
+					cursor:default;
+					font-size:13px;
+					line-height:30px;
+					color:fade(@dark, 85%);
+					padding-right:15px;
+				}
+			}
+		}/*#qb-color-options*/
+		
+		#qb-bar-preview{
+			width:100%;
+			height:60px;
+			background:@dark;
+			margin:15px 0;
+			
+			.transition();
+			
+			.attribution{
+				position:relative;float:left;clear:none;
+				width:12px;
+				height:12px;
+				margin:24px 4px;
+				background-size:100%;
+				background-image:url("../images/menu-icon.png");
+				opacity:.5;
+			}
+			
+			.text{
+				font-family:@barFont;
+				
+				position:relative;
+				float:left;
+				clear:none;
+				color:#FFF;
+				font-size:14px;
+				
+				//margin:5px 0 5px 5px;
+				margin:5px 0 5px 15px;
+				
+				line-height:50px;
+				
+				.transition();
+				
+			}
+			.button{
+				font-family:@buttonFont;
+				
+				outline:none;
+				border:none;
+				.no-shadow();
+				line-height:34px;
+				
+				.rounded-corners(2px);
+				
+				position:relative;
+				float:right;
+				clear:none;
+				color:#FFF;
+				background:@barTeal;
+				margin:13px;
+				height:34px;
+				text-align:center;
+				padding:0 20px;
+				
+				.transition();
+				
+				&:hover{
+					background:darken(@barTeal, 8%);
+				}
+			}
+		}/*#qb-bar-preview*/
+		
+		#qb-color-presets{
+			position:relative;
+			float:right;
+			clear:none;
+			
+			width:40%;
+			
+			margin-top:25px;
+			margin-right:5%;
+			
+			border:1px solid #DDD;
+			.rounded-corners(5px);
+			
+			padding:10px;
+			
+			.presets-label{
+				text-align:center;
+				width:100%;
+				line-height:30px;
+				color:#CCC;
+				font-family:@buttonFont;
+			}
+			.presets{
+				list-style:none;
+				
+				li{
+					position:relative;float:left;clear:none;
+					margin:10px;
+					width:24px;
+					height:24px;
+					.rounded-corners(12px);
+					overflow:hidden;
+					
+					.bar-color,.button-color{
+						position:relative;float:left;clear:none;
+						width:12px;
+						height:100%;
+					}
+					
+					opacity:.85;
+					
+					&:hover{
+						cursor:pointer;
+						opacity:1;
+						
+						margin:8px;
+						width:28px;
+						height:28px;
+						.rounded-corners(13px);
+						.bar-color,.button-color{
+							width:14px;
+						}
+					}
+				}
+			}
+		}/*#qb-color-presets*/
+		
+		.qb-settings-fields{
+			position:relative;
+			margin-top:25px;
+			
+			.qb-settings-field{
+				position:relative;float:left;clear:both;
+				
+				height:50px;
+				padding:10px;
+				.paddingSubtractsFromWidth();
+				
+				width:80%;
+				margin:5px 10%;
+				
+				background:rgba(0,0,0,.02);
+				border:1px solid rgba(0,0,0,.05);
+				.rounded-corners(3px);
+				
+				i.warning-icon{
+					position:absolute;
+					left:-30px;
+					top:15px;
+					font-size:14px;
+					width:20px;
+					height:20px;
+					line-height:20px;
+					text-align:center;
+					
+					color:@barOrange;
+					
+					opacity:.65;
+					
+					&:hover{
+						opacity:1;
+					}
+				}
+				
+				input{
+					z-index:0;
+					background:transparent;
+					outline:none;
+					border:none;
+					.no-shadow();
+					
+					position:absolute;
+					left:0;top:0;
+					height:100%;
+					width:100%;
+					padding-right:150px;
+					padding-left:15px;
+				}
+				button{
+					position:relative;
+					z-index:1;
+					float:right;
+				}
+			}
+		}/*.qb-settings-fields*/
+		
+	}
+}

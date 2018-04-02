@@ -1,0 +1,28 @@
+cgi-bin/
+node_modules/
+package-lock.json
+*.DS_Store
+
+#ignore all but and wp-content/
+wp-admin/
+wp-includes/
+.htaccess
+#ignore just the index.php in the top level dir
+/index.php
+license.txt
+readme.html
+wp-activate.php
+wp-blog-header.php
+wp-comments-post.php
+wp-config-sample.php
+wp-config.php
+wp-cron.php
+wp-links-opml.php
+wp-load.php
+wp-login.php
+wp-mail.php
+wp-settings.php
+wp-signup.php
+wp-trackback.php
+xmlrpc.php
+wordpress_4.sql

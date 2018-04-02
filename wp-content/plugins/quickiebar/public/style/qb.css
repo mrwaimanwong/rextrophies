@@ -1,0 +1,534 @@
+.centeringWrap {
+  position: relative;
+  float: left;
+  clear: both;
+  left: 50%;
+}
+.centeringWrap .centeredWrap {
+  position: relative;
+  float: left;
+  clear: both;
+  left: -50%;
+}
+/*.drop-shadow(0px, 0px, 2px,#3A3A3A);*/
+/*.no-shadow();*/
+/*.gradient-background(#3A3A3A, #4B4B4B)*/
+.centeringWrap {
+  position: relative;
+  float: left;
+  clear: both;
+  left: 50%;
+}
+.centeringWrap .centeredWrap {
+  position: relative;
+  float: left;
+  clear: both;
+  left: -50%;
+}
+/*.drop-shadow(0px, 0px, 2px,#3A3A3A);*/
+/*.no-shadow();*/
+/*.gradient-background(#3A3A3A, #4B4B4B)*/
+.qb-disable-animation {
+  -webkit-transition: 0 !important;
+  -moz-transition: 0 !important;
+  transition: 0 !important;
+}
+#quickiebar-show-button {
+  display: none;
+  /*default to hidden until JS shows this*/
+  overflow: visible;
+  position: fixed;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  height: 4px;
+  opacity: .75;
+  -webkit-transition: all linear 0.2s;
+  -moz-transition: all linear 0.2s;
+  transition: all linear 0.2s;
+}
+@media only screen and (max-width: 900px) {
+  #quickiebar-show-button {
+    display: none !important;
+  }
+}
+#quickiebar-show-button.show-button-sticky-disabled {
+  position: relative;
+}
+#quickiebar-show-button:hover {
+  opacity: 1;
+}
+#quickiebar-show-button .show-button {
+  position: absolute;
+  right: 20px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  text-align: center;
+  color: #FFF;
+  font-size: 12px;
+}
+#quickiebar-show-button .show-button i {
+  height: 20px;
+  line-height: 20px;
+}
+#quickiebar-show-button.show-button-placement-top {
+  top: 0;
+}
+#quickiebar-show-button.show-button-placement-top .show-button {
+  bottom: -20px;
+  -moz-border-radius-bottomleft: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  -moz-border-radius-bottomright: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+#quickiebar-show-button.show-button-placement-top .show-button .fa-chevron-up {
+  display: none;
+}
+#quickiebar-show-button.show-button-placement-top .show-button .fa-chevron-down {
+  display: block;
+}
+#quickiebar-show-button.show-button-placement-bottom {
+  bottom: 0;
+}
+#quickiebar-show-button.show-button-placement-bottom .show-button {
+  top: -20px;
+  -moz-border-radius-topleft: 3px;
+  -webkit-border-top-left-radius: 3px;
+  border-top-left-radius: 3px;
+  -moz-border-radius-topright: 3px;
+  -webkit-border-top-right-radius: 3px;
+  border-top-right-radius: 3px;
+}
+#quickiebar-show-button.show-button-placement-bottom .show-button .fa-chevron-up {
+  display: block;
+}
+#quickiebar-show-button.show-button-placement-bottom .show-button .fa-chevron-down {
+  display: none;
+}
+/*we have to use both the id and the class..because wordpress creates a div with id = quickiebar on the installed plugins admin page*/
+#quickiebar.qb {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /*prevents width > 100% overflow issues*/
+  overflow: hidden;
+  cursor: default;
+  height: 80px;
+  display: none;
+  z-index: 100;
+  /*Optional Classes used by quickiebar settings - all prefixed with qb-*/
+  /*These intentionally overwrite a lot of the default styling*/
+  /*Apply centered styling to tablet sized devices*/
+  /*Mobile Styling*/
+  /*Apply centered styling to tablet sized devices*/
+  /*Styling specific for admin previewing*/
+}
+#quickiebar.qb .wrap {
+  background: transparent;
+}
+#quickiebar.qb .hover-background-overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.04);
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+  transition: 0.2s;
+  opacity: 0;
+  display: block;
+}
+#quickiebar.qb .link-overlay {
+  z-index: 2;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  cursor: pointer;
+  display: block;
+}
+#quickiebar.qb .link-overlay:focus {
+  /* For IE 8 */
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  /* For IE 8 */
+}
+#quickiebar.qb:hover .hover-background-overlay {
+  opacity: 1;
+}
+#quickiebar.qb .wrap {
+  /*don't overwrite wordpress default wrap styling - otherwise header will have different wrap settings than body*/
+}
+#quickiebar.qb .qb-wrap {
+  position: relative;
+  float: left;
+  width: 100%;
+}
+#quickiebar.qb .qb-attribution,
+#quickiebar.qb .qb-close-button {
+  z-index: 3;
+  /*lay on top of link-overlay*/
+  position: absolute;
+  top: 0;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  opacity: .5;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  transition: 0.4s;
+}
+#quickiebar.qb .qb-attribution:focus,
+#quickiebar.qb .qb-close-button:focus,
+#quickiebar.qb .qb-attribution:active,
+#quickiebar.qb .qb-close-button:active {
+  /* For IE 8 */
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  /* For IE 8 */
+}
+#quickiebar.qb .qb-attribution:hover,
+#quickiebar.qb .qb-close-button:hover {
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+  transition: 0.2s;
+  opacity: .9;
+}
+#quickiebar.qb .qb-attribution {
+  left: 0;
+  background-image: url('../images/qb-attribution-light.png');
+  background-size: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  /*default is off screen*/
+  left: -120px;
+}
+#quickiebar.qb .qb-attribution.qb-attribution-dark {
+  background-image: url('../images/qb-attribution-dark.png');
+  opacity: .15;
+}
+#quickiebar.qb .qb-attribution.qb-attribution-dark:hover {
+  opacity: .4;
+}
+#quickiebar.qb .qb-attribution.visible {
+  left: 0px;
+}
+#quickiebar.qb .qb-close-button {
+  right: 0;
+  font-size: 21px;
+  text-align: center;
+  line-height: 40px;
+  color: #FFF;
+  /*default is off screen*/
+  right: -120px;
+  /*when visible, set margin-right back to 0 so it "slides" onto the screen when this class is added*/
+}
+#quickiebar.qb .qb-close-button i {
+  line-height: 40px;
+}
+#quickiebar.qb .qb-close-button.qb-close-button-dark {
+  color: rgba(0, 0, 0, 0.5);
+}
+#quickiebar.qb .qb-close-button.visible {
+  right: 0;
+}
+#quickiebar.qb .qb-close-bar {
+  /*don't display on desktop*/
+  display: none;
+}
+#quickiebar.qb .bar-text,
+#quickiebar.qb .bar-button,
+#quickiebar.qb .qb-close-button,
+#quickiebar.qb .qb-attribution {
+  margin: 20px;
+  /*This will change depending on the bar height setting*/
+}
+#quickiebar.qb .bar-text,
+#quickiebar.qb .bar-button {
+  position: relative;
+  float: left;
+  clear: none;
+}
+#quickiebar.qb .bar-text {
+  margin-left: 0;
+  line-height: 40px;
+  font-family: 'Roboto Slab', Georgia, serif;
+  font-size: 17px;
+  color: #FFF;
+}
+#quickiebar.qb .bar-button {
+  /* Safari/Chrome, other WebKit */
+  /* Firefox, other Gecko */
+  /* Opera/IE 8+ */
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
+  box-sizing: border-box;
+  /* Opera/IE 8+ */
+  margin-right: 0;
+  padding: 0 20px;
+  float: right;
+  outline: none;
+  border: none;
+  height: 40px;
+  line-height: 40px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+}
+#quickiebar.qb.qb-bar_height-tall {
+  height: 100px;
+}
+#quickiebar.qb.qb-bar_height-tall .bar-text,
+#quickiebar.qb.qb-bar_height-tall .bar-button,
+#quickiebar.qb.qb-bar_height-tall .qb-close-button,
+#quickiebar.qb.qb-bar_height-tall .qb-attribution {
+  margin: 30px;
+}
+#quickiebar.qb.qb-bar_height-skinny {
+  height: 40px;
+}
+#quickiebar.qb.qb-bar_height-skinny .bar-text,
+#quickiebar.qb.qb-bar_height-skinny .bar-button,
+#quickiebar.qb.qb-bar_height-skinny .qb-close-button,
+#quickiebar.qb.qb-bar_height-skinny .qb-attribution {
+  margin: 0 10px;
+}
+#quickiebar.qb.qb-bar_height-skinny .bar-text {
+  font-size: 15px;
+}
+#quickiebar.qb.qb-bar_height-skinny .bar-button {
+  height: 30px;
+  line-height: 30px;
+  margin: 5px 10px;
+  font-size: 14px;
+}
+#quickiebar.qb.qb-bar_height-thin {
+  height: 60px;
+}
+#quickiebar.qb.qb-bar_height-thin .bar-text,
+#quickiebar.qb.qb-bar_height-thin .bar-button,
+#quickiebar.qb.qb-bar_height-thin .qb-close-button,
+#quickiebar.qb.qb-bar_height-thin .qb-attribution {
+  margin: 10px;
+}
+#quickiebar.qb.qb-sticky-disabled {
+  position: relative;
+}
+#quickiebar.qb.qb-placement-bottom {
+  position: fixed;
+  top: auto;
+  bottom: 0;
+}
+#quickiebar.qb.qb-attribution-hidden .qb-attribution {
+  display: none !important;
+}
+#quickiebar.qb.qb-alignment-centered .wrap {
+  position: relative;
+  float: left;
+  left: 50%;
+  margin: 0;
+  padding: 0;
+  width: auto;
+}
+#quickiebar.qb.qb-alignment-centered .qb-wrap {
+  position: relative;
+  left: -50%;
+  width: auto;
+}
+#quickiebar.qb.qb-button-style-square .bar-button {
+  border-color: transparent !important;
+}
+#quickiebar.qb.qb-button_style-rounded .bar-button {
+  border-color: transparent !important;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+#quickiebar.qb.qb-button_style-pill .bar-button {
+  border-color: transparent !important;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+}
+#quickiebar.qb.qb-button_style-outline .bar-button {
+  line-height: 38px;
+  background: transparent !important;
+  border-width: 2px;
+  border-style: solid;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+#quickiebar.qb.qb-button_style-outline.qb-bar_height-skinny .bar-button {
+  border-width: 1px;
+  line-height: 28px;
+}
+@media only screen and (max-width: 1024px) {
+  #quickiebar.qb .wrap {
+    position: relative;
+    left: 50%;
+    margin: 0;
+    padding: 0;
+    width: auto;
+  }
+  #quickiebar.qb .qb-wrap {
+    position: relative;
+    left: -50%;
+    width: auto;
+  }
+}
+#quickiebar.qb.qb-close_button_visibility-alwaysshow .qb-close-button {
+  right: 0 !important;
+}
+#quickiebar.qb.qb-close_button_visibility-alwayshide .qb-close-button {
+  display: none !important;
+}
+@media only screen and (max-width: 900px) {
+  #quickiebar.qb {
+    /*Overwrite any options set for bar for tablet/mobile style browsers*/
+    position: relative !important;
+    /*height will be set programatically*/
+    /*Add 20px to bottom (or top) of bar for close-button-bar*/
+    padding: 0 0 30px 0;
+    /* Safari/Chrome, other WebKit */
+    /* Firefox, other Gecko */
+    /* Opera/IE 8+ */
+    -webkit-box-sizing: content-box;
+    /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: content-box;
+    /* Firefox, other Gecko */
+    box-sizing: content-box;
+    /* Opera/IE 8+ */
+    /*remove float that .wrap might have applied to it, since we'll be centering anyway and a float will interfere with correctly sizing the parent element*/
+    /*undo centering and set qb-wrap container to 92% width*/
+    /*hide attribution and close button*/
+    /*move link overlay 30px to the top so it isn't triggered when we click the close bar*/
+    /*show mobile close button bar*/
+  }
+  #quickiebar.qb.qb-bar_height-skinny,
+  #quickiebar.qb.qb-bar_height-thin,
+  #quickiebar.qb.qb-bar_height-regular,
+  #quickiebar.qb.qb-bar_height-tall {
+    height: auto;
+  }
+  #quickiebar.qb .wrap,
+  #quickiebar.qb .qb-wrap {
+    float: none;
+  }
+  #quickiebar.qb .wrap {
+    left: 0;
+    width: 100%;
+  }
+  #quickiebar.qb .qb-wrap {
+    left: 0;
+    width: 92%;
+    margin: 0 4%;
+    padding: 5px 0;
+    text-align: center;
+  }
+  #quickiebar.qb .qb-attribution,
+  #quickiebar.qb .qb-close-button {
+    display: none;
+  }
+  #quickiebar.qb .link-overlay {
+    top: -30px;
+  }
+  #quickiebar.qb .qb-close-bar {
+    position: absolute;
+    z-index: 4;
+    cursor: pointer;
+    bottom: 0px;
+    height: 30px;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.05);
+    text-align: center;
+    font-size: 13px;
+    line-height: 30px;
+    color: #FFF;
+    display: block;
+  }
+  #quickiebar.qb .qb-close-bar i {
+    opacity: .35;
+    /*Needed to overwrite some theme css settings*/
+    line-height: 30px;
+  }
+  #quickiebar.qb .qb-close-bar:hover {
+    background: rgba(0, 0, 0, 0.1);
+  }
+  #quickiebar.qb .bar-text,
+  #quickiebar.qb .bar-button {
+    float: none;
+    display: inline-block;
+    width: 100%;
+  }
+  #quickiebar.qb .bar-text {
+    line-height: 25px;
+    margin: 0 !important;
+    /*remove any "right arrow" icons*/
+  }
+  #quickiebar.qb .bar-text i.fa-arrow-right,
+  #quickiebar.qb .bar-text i.fa-long-arrow-right,
+  #quickiebar.qb .bar-text i.chevron-right {
+    display: none;
+  }
+  #quickiebar.qb .bar-button {
+    line-height: 35px;
+    height: 35px;
+    margin: 10px 0 !important;
+    width: auto;
+    clear: both;
+  }
+}
+#quickiebar.qb.qb-admin-preview {
+  position: fixed;
+}
+#quickiebar.qb.qb-admin-preview .qb-attribution,
+#quickiebar.qb.qb-admin-preview .link-overlay {
+  display: none;
+}
+#quickiebar.qb.qb-admin-preview.qb-alignment-leftright .wrap,
+#quickiebar.qb.qb-admin-preview.qb-alignment-leftright .qb-wrap {
+  width: 100%;
+  margin: 0 auto;
+}
+@media only screen and (min-width: 480px) {
+  #quickiebar.qb.qb-admin-preview.qb-alignment-leftright .wrap,
+  #quickiebar.qb.qb-admin-preview.qb-alignment-leftright .qb-wrap {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 690) {
+  #quickiebar.qb.qb-admin-preview.qb-alignment-leftright .wrap,
+  #quickiebar.qb.qb-admin-preview.qb-alignment-leftright .qb-wrap {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 900px) {
+  #quickiebar.qb.qb-admin-preview.qb-alignment-leftright .wrap,
+  #quickiebar.qb.qb-admin-preview.qb-alignment-leftright .qb-wrap {
+    width: 720px;
+  }
+}
+@media only screen and (min-width: 1140px) {
+  #quickiebar.qb.qb-admin-preview.qb-alignment-leftright .wrap,
+  #quickiebar.qb.qb-admin-preview.qb-alignment-leftright .qb-wrap {
+    width: 960px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  #quickiebar.qb.qb-admin-preview.qb-alignment-leftright .wrap,
+  #quickiebar.qb.qb-admin-preview.qb-alignment-leftright .qb-wrap {
+    width: 1140px;
+  }
+}
+/*Adjust wp body positioning*/

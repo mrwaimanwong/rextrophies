@@ -1,0 +1,45 @@
+<div id="quickiebar-setup" class="quickiebar-page">
+	<div class="wrap">
+		
+		<div class="qb-header">
+			<div class="qb-page-icon"></div>
+			<h2 class="qb-header-text">
+				<span class="actionable">Setup</span>
+			</h2>
+		</div>
+		
+		<div class="qb-main-content">
+			
+			<div class="qb-setup-steps">
+				<ul>
+					<li class="complete"><i class="fa fa-check-circle-o"></i> &nbsp;Activate Quickiebar</li>
+					<li class="divider"><i class="fa fa-chevron-right"></i></li>
+					<li><i class="fa fa-circle-o"></i> &nbsp;Receive Updates (optional)</li>
+					<li class="divider"><i class="fa fa-chevron-right"></i></li>
+					<li class="next"><i class="fa fa-circle-o"></i> &nbsp;Start Increasing Conversions</li>
+				</ul>
+			</div>
+			
+			<div class="qb-form-container">
+				<div class="qb-form-box">
+					<h3>Receive Plugin Updates & Save 10% on PRO?</h3>
+					<p>Want to save 10% on PRO and get important plugin updates & news (about once a month)? This is completely optional, but it's a great way to support the plugin :)</p>
+					<form>
+						<input type="text" placeholder="Email" data-bind="value: emailAddress, valueUpdate: 'keyup'"/>
+						
+						<button class="coral medium" data-bind="click: subscribeAndCompleteSetup, css: { disabled: subscribing() || completingSetup() }, enable: !(subscribing() || completingSetup())"><span data-bind="visible: subscribing() || completingSetup()"><i class="fa fa-spin fa-spinner"></i> &nbsp;</span>Get Product Updates</button>
+						<button class="transparent medium faded" data-bind="click: completeSetup, css: { disabled: subscribing() || completingSetup() }, enable: !(subscribing() || completingSetup())"><span data-bind="visible: completingSetup()"><i class="fa fa-spin fa-spinner"></i> &nbsp;</span>Skip this step</button>
+					</form>
+				</div>
+			</div>
+			
+		</div><!--/.qb-main-content-->
+		
+		<div class="qb-sidebar-content">
+			<h5>Any Questions?</h5>
+			<p>Open a ticket on <a href="https://quickiebar.com/support" target="_blank">quickiebar.com</a>. We’re always happy to help you get set up and answer any questions you might have.</p>
+			<a href="https://quickiebar.com/support" target="_blank"><button class="barTeal tiny extra-padding">Open a ticket</button></a>
+		</div><!--/.qb-sidebar-content-->
+		
+	</div>
+</div>

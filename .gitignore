@@ -1,6 +1,7 @@
 cgi-bin/
 node_modules/
 package-lock.json
+search-replace-db-ww/
 *.DS_Store
 
 #ignore all but and wp-content/

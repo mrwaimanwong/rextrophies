@@ -1,0 +1,258 @@
+#vpc-preview, .vpc-cart-config-image, .saved-config-preview
+{
+    position: relative;
+    border: 1px solid #f1f4f9;
+}
+#vpc-preview img, .vpc-cart-config-image img, .saved-config-preview img
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+#vpc-preview img:first-child, .vpc-cart-config-image img:first-child, .saved-config-preview img:first-child
+{
+    position: relative;
+}/*
+#vpc-components, #vpc-preview
+{
+    vertical-align: top;
+}
+.vpc-component
+{
+    border: 1px solid #f1f4f9;
+    border-top: none;
+    padding: 5px;
+    cursor: pointer;
+}
+.vpc-component:first-of-type
+{
+    border-top: 1px solid #f1f4f9;
+}
+.vpc-component-header > img{
+    width: 60px;
+    vertical-align: top;
+    display: inline-block;
+}
+.vpc-component-header{
+    color: #768e9d;
+    position: relative;
+}
+.vpc-component-header > span
+{
+    padding-left: 10px;
+}
+.vpc-options
+{
+    display: inline-block;
+    width: 100%;
+    margin-top: 5px;
+    background-color: #f1f4f9;
+}
+.vpc-options img
+{
+    max-width: 20px;
+    max-height: 20px;
+    display: inline-block;
+}
+.txt.vpc-selected
+{
+    color: #becbd2;
+    display: block;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: normal;
+    padding-left: 70px;
+}
+.vpc-options > .vpc-selected
+{
+    position: relative;
+}
+.vpc-options label{
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    font-size: 13px;
+    text-align: center;
+    vertical-align: top;
+    width: 25px;
+    height: 25px;
+    box-sizing: content-box;
+    margin: 5px;
+}
+.vpc-options input{
+    display: none;
+}
+.vpc-options label:before{
+    content: "";
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+.vpc-options input:checked + label:before{
+    font-family: FontAwesome;
+    content: "\f00c";
+    color: white;
+}
+.vpc-action-buttons
+{
+    margin-top: 10px;
+}
+#vpc-price-container{
+    height: 50px;
+    color: #0099cc;
+    font-weight: bold;
+    text-align: right;
+    font-size: 30px;
+}
+#vpc-components{
+    margin-top: 50px;
+}
+.vpc-selected-icon{
+    position: absolute;
+    top: 7px;
+    right: 5px;
+}
+.vpc-action-buttons{
+    float:right;
+    text-align: right;
+}
+#vpc-qty-container{
+    display: inline-block;
+}
+ input#vpc-qty[type="number"]::-webkit-outer-spin-button,input#vpc-qty[type="number"]::-webkit-inner-spin-button{
+    display: none;
+}
+#vpc-qty{
+    text-align: center;
+    height: 35px;
+    background-color: #efefef;
+    color: #60646c; 
+    border:none;
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+}
+.vpc-action-buttons #vpc-add-to-cart,.vpc-action-buttons .plus,.vpc-action-buttons .minus{
+    background: #0099cc !important;
+}
+.vpc-group {
+    display: table;
+    width: 100%;
+    padding: 5px;
+    border-top: 1px solid lightgray;
+}
+.vpc-group label{
+    border: 1px solid;
+    margin-right: 5px;
+}
+.vpc-group-name{
+    display: inline-block;
+    margin: 5px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+*/.vpc-success, .vpc-failure
+{
+    color: white;
+    padding: 5px;
+    text-align: center;
+}
+.vpc-success
+{
+    background-color: green;    
+}
+.vpc-success a
+{
+    color: greenyellow;
+}
+.vpc-failure
+{
+    background-color: red;
+}
+.vpc-cart-config
+{
+    border: 1px solid #c8c8c8;
+    margin-bottom: 5px;
+    padding: 5px;
+    
+}
+.vpc-cart-config img
+{
+    /*border: 1px solid #c8c8c8;*/
+    margin: 5px;
+    padding: 5px;
+    display: inline-block;
+    vertical-align: middle;
+    max-width: 100%;
+    /*max-height: 30px;*/
+}
+.vpc-cart-config-image{
+    max-width: 150px;
+    margin: 0 auto;
+}
+
+.woocommerce .vpc-cart-config-image img{
+    width:100% !important;
+    max-width: 100%;
+    background: none;
+}
+.vpc-cart-options-container{
+    padding:20px;
+}
+.vpc-cart-options-container img,.woocommerce .vpc-cart-options-container img{
+    max-width: 30px;
+    max-height: 30px;
+}
+.vpc-single-option-wrap
+{
+    display: inline-block;
+}
+.vpc-cart-options-container
+{
+    /*border: 1px solid #f1f4f9; */
+    padding: 5px; 
+    margin: 5px
+}
+
+.vpc-cart-options-container > div{
+    display: table;
+    width:100%;
+    border:1px solid #ccc;
+    padding:0 5px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+.vpc-cart-options-container > div > strong{
+    display: table-cell;
+    /*width:80%;*/
+    vertical-align: middle;
+}
+.vpc-cart-options-container > div > strong > span{
+    font-weight: normal;
+}
+
+.vpc-cart-options-container > div > img{
+    float:right;
+}
+
+#vpc-ajax-container.vpc-loading{
+	min-height:500px;
+	position:relative;
+}
+#vpc-ajax-container.vpc-loading > img{
+	position: absolute;
+	top:0;
+	bottom: 0;
+	left:0;
+	right: 0;
+	margin:auto;
+}
+#vpc-preview img
+{
+    background: none !important;
+}

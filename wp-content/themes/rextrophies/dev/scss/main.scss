@@ -1072,7 +1072,7 @@ img.alignright,
 	border-bottom: 5px solid $color-primary;
 	margin: 0 50px 0 0;
 	@include font-size(1.8);
-	font-weight: 900;
+	// font-weight: 900;
 
 	@include bp(papa-bear) {
 	margin: 0;
@@ -2014,9 +2014,9 @@ p.entry-meta {
 .woocommerce .products ul li, .woocommerce ul.products li {
 	text-align: center;
 }
-.woocommerce-variation-add-to-cart {
-	display: none;
-}
+// .woocommerce-variation-add-to-cart {
+// 	display: none;
+// }
 
 .woocommerce ul.products li.product a img,
 .woocommerce div.product div.images img
@@ -2025,8 +2025,58 @@ p.entry-meta {
 	margin: 0 auto 1em;
 }
 
-.sku_wrapper {
-	display: none;
+.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt {
+    background-color: $color-primary;
+		padding: 16px 24px;
+}
+
+.woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover {
+    background-color: $color-gray-dark;
+    color: #fff;
+}
+
+.widget_product_search button {
+	background-color: #ebe9eb;
+	color: #515151;
+}
+
+.widget_product_search button:hover {
+	background-color: #dad8da;
+}
+
+.rex-menu-item-cart i {
+	color: $color-secondary;
+}
+
+// .sku_wrapper {
+// 	display: none;
+// }
+
+//Visual Composer Plugins
+.vpc-global-preview .text_field {
+	text-align: center;
+	text-transform: uppercase;
+	width: 29%;
+}
+
+.woocommerce a.vpc-configure-button {
+	background-color: $color-primary;
+	color: #FFF;
+	padding: 16px 24px;
+}
+
+.woocommerce a.vpc-configure-button:hover {
+	background-color: $color-gray-dark;
+	color: #FFF;
+}
+
+#vpc-preview {
+	width: 70%;
+	margin: 0 auto;
+}
+
+.vpc-component-header > img {
+	display: none !important;
 }
 
 /* # Media Queries

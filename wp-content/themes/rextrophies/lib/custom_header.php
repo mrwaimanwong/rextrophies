@@ -1,4 +1,4 @@
- <?php
+<?php
 
 /** Genesis - Remove header markup */
 add_action('genesis_setup', 'ww_remove_header');
@@ -16,7 +16,6 @@ add_action('genesis_header', 'ww_custom_header');
 
 function ww_custom_header()
 {
-
 	$name = get_bloginfo ('name');
 	$url = get_bloginfo ('url');
 	$description = get_bloginfo ('description');

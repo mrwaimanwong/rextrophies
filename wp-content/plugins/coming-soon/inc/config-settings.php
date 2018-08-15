@@ -53,7 +53,7 @@ function seed_csp4_get_options(){
             '1' => __( 'Enable Coming Soon Mode', 'coming-soon' ),
             '2' => __( 'Enable Maintenance Mode', 'coming-soon' )
         ),
-        "desc" => __( "When you are logged in you'll see your normal website. Logged out visitors will see the Coming Soon or Maintenance page. Coming Soon Mode will be available to search engines if your site is not private. Maintenance Mode will notify search engines that the site is unavailable. <a href='https://www.seedprod.com/coming-soon-vs-maintenance-mode/' target='_blank'>Learn the difference between Coming Soon and Maintenance Mode</a>", 'coming-soon' ),
+        "desc" => __( "When you are logged in you'll see your normal website. Logged out visitors will see the Coming Soon or Maintenance page. Coming Soon Mode will be available to search engines if your site is not private. Maintenance Mode will notify search engines that the site is unavailable. <a href='https://www.seedprod.com/coming-soon-vs-maintenance-mode/?utm_source=coming-soon-plugin&utm_medium=link&utm_campaign=cc-vs-mm' target='_blank'>Learn the difference between Coming Soon and Maintenance Mode</a>", 'coming-soon' ),
         "default_value" => "0"
     );
 
@@ -98,7 +98,7 @@ function seed_csp4_get_options(){
         "type" => "wpeditor",
         "id" => "description",
         "label" => __( "Message", 'coming-soon' ),
-        "desc" => __( "Tell the visitor what to expect from your site. Check out the Pro Version if you need ShortCode support.", 'coming-soon' ),
+        "desc" => __( "Need Shortcode Support? <a href='https://www.seedprod.com/ultimate-coming-soon-page-vs-coming-soon-pro/?utm_source=coming-soon-plugin&utm_medium=banner&utm_campaign=coming-soon-link-in-plugin'>Check out the Pro Verion</a> which supports shortcodes and adds many more features.", 'coming-soon' ),
         "class" => "large-text"
     );
 

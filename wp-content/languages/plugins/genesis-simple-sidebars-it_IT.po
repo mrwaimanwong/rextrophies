@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Genesis Simple Sidebars - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2017-04-26 19:32:09+0000\n"
+"PO-Revision-Date: 2018-05-16 09:31:11+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -157,7 +157,7 @@ msgstr "Grande! La tua nuova sidebar è stata creata correttamente."
 
 #: includes/class-genesis-simple-sidebars-admin.php:125
 msgid "Delete"
-msgstr "Cancella"
+msgstr "Elimina"
 
 #: includes/class-genesis-simple-sidebars-admin.php:124
 msgid "Edit"

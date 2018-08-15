@@ -37,7 +37,7 @@ function ww_custom_footer() {
 				<div class="footer-info one-fourth first">
 				<h1 class="site-title" itemprop="headline"><a href="'.$url .'" title="'.$name.'">'.$name.'</a></h1>
 				<p class="footer-address">12817 Poway Road<br />Poway , CA 92064</p>
-				<p><span class="hero-footer-header">Phone:</span> <a href="tel://858-748-5951">858-748-5951</a><br /><span class="hero-footer-header">Email:</span> <a href="mailto://rextrophies@att.net">rextrophies@att.net</a></p>
+				<p><span class="hero-footer-header">Phone:</span> <a href="tel://858-748-5951">858-748-5951</a><br /><span class="hero-footer-header">Email:</span> <a href="mailto:info@rextrophies.com">info@rextrophies.com</a></p>
 				<ul class="social-links">
 					<li><a href="mailto:info@rextrophies.com" target="_blank"><i class="icon-envelope-square"></i></a></li>
 					<li><a href="https://www.instagram.com/rextrophies/" target="_blank"><i class="icon-instagram"></i></a></li>

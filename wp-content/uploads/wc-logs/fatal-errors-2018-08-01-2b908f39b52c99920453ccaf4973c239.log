@@ -1,0 +1,181 @@
+2018-08-01T10:08:49+00:00 CRITICAL Uncaught Error: Call to a member function is_empty() on null in /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-content/themes/rextrophies/lib/woocommerce.php:15
+Stack trace:
+#0 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-content/themes/rextrophies/functions.php(21): require_once()
+#1 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-settings.php(424): include('/Users/mrwaiman...')
+#2 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-config.php(89): require_once('/Users/mrwaiman...')
+#3 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-load.php(37): require_once('/Users/mrwaiman...')
+#4 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-blog-header.php(13): require_once('/Users/mrwaiman...')
+#5 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/index.php(17): require('/Users/mrwaiman...')
+#6 {main}
+  thrown
+
+2018-08-01T10:08:50+00:00 CRITICAL Uncaught Error: Call to a member function is_empty() on null in /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-content/themes/rextrophies/lib/woocommerce.php:15
+Stack trace:
+#0 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-content/themes/rextrophies/functions.php(21): require_once()
+#1 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-settings.php(424): include('/Users/mrwaiman...')
+#2 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-config.php(89): require_once('/Users/mrwaiman...')
+#3 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-load.php(37): require_once('/Users/mrwaiman...')
+#4 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-admin/admin-ajax.php(22): require_once('/Users/mrwaiman...')
+#5 {main}
+  thrown
+
+2018-08-01T10:09:16+00:00 CRITICAL Uncaught Error: Call to a member function is_empty() on null in /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-content/themes/rextrophies/lib/woocommerce.php:15
+Stack trace:
+#0 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-content/themes/rextrophies/functions.php(21): require_once()
+#1 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-settings.php(424): include('/Users/mrwaiman...')
+#2 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-config.php(89): require_once('/Users/mrwaiman...')
+#3 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-load.php(37): require_once('/Users/mrwaiman...')
+#4 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-blog-header.php(13): require_once('/Users/mrwaiman...')
+#5 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/index.php(17): require('/Users/mrwaiman...')
+#6 {main}
+  thrown
+
+2018-08-01T10:09:22+00:00 CRITICAL Uncaught Error: Call to a member function is_empty() on null in /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-content/themes/rextrophies/lib/woocommerce.php:15
+Stack trace:
+#0 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-content/themes/rextrophies/functions.php(21): require_once()
+#1 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-settings.php(424): include('/Users/mrwaiman...')
+#2 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-config.php(89): require_once('/Users/mrwaiman...')
+#3 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-load.php(37): require_once('/Users/mrwaiman...')
+#4 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-blog-header.php(13): require_once('/Users/mrwaiman...')
+#5 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/index.php(17): require('/Users/mrwaiman...')
+#6 {main}
+  thrown
+
+2018-08-01T10:09:24+00:00 CRITICAL Uncaught Error: Call to a member function is_empty() on null in /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-content/themes/rextrophies/lib/woocommerce.php:15
+Stack trace:
+#0 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-content/themes/rextrophies/functions.php(21): require_once()
+#1 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-settings.php(424): include('/Users/mrwaiman...')
+#2 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-config.php(89): require_once('/Users/mrwaiman...')
+#3 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-load.php(37): require_once('/Users/mrwaiman...')
+#4 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-blog-header.php(13): require_once('/Users/mrwaiman...')
+#5 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/index.php(17): require('/Users/mrwaiman...')
+#6 {main}
+  thrown
+
+2018-08-01T10:09:28+00:00 CRITICAL Uncaught Error: Call to a member function is_empty() on null in /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-content/themes/rextrophies/lib/woocommerce.php:15
+Stack trace:
+#0 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-content/themes/rextrophies/functions.php(21): require_once()
+#1 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-settings.php(424): include('/Users/mrwaiman...')
+#2 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-config.php(89): require_once('/Users/mrwaiman...')
+#3 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-load.php(37): require_once('/Users/mrwaiman...')
+#4 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-blog-header.php(13): require_once('/Users/mrwaiman...')
+#5 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/index.php(17): require('/Users/mrwaiman...')
+#6 {main}
+  thrown
+
+2018-08-01T10:11:06+00:00 CRITICAL Uncaught Error: Call to a member function is_empty() on null in /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-content/themes/rextrophies/lib/woocommerce.php:16
+Stack trace:
+#0 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-content/themes/rextrophies/functions.php(21): require_once()
+#1 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-settings.php(424): include('/Users/mrwaiman...')
+#2 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-config.php(89): require_once('/Users/mrwaiman...')
+#3 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-load.php(37): require_once('/Users/mrwaiman...')
+#4 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-blog-header.php(13): require_once('/Users/mrwaiman...')
+#5 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/index.php(17): require('/Users/mrwaiman...')
+#6 {main}
+  thrown
+
+2018-08-01T10:11:09+00:00 CRITICAL Uncaught Error: Call to a member function is_empty() on null in /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-content/themes/rextrophies/lib/woocommerce.php:16
+Stack trace:
+#0 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-content/themes/rextrophies/functions.php(21): require_once()
+#1 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-settings.php(424): include('/Users/mrwaiman...')
+#2 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-config.php(89): require_once('/Users/mrwaiman...')
+#3 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-load.php(37): require_once('/Users/mrwaiman...')
+#4 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-blog-header.php(13): require_once('/Users/mrwaiman...')
+#5 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/index.php(17): require('/Users/mrwaiman...')
+#6 {main}
+  thrown
+
+2018-08-01T10:11:32+00:00 CRITICAL Uncaught Error: Call to a member function is_empty() on null in /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-content/themes/rextrophies/lib/woocommerce.php:16
+Stack trace:
+#0 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-content/themes/rextrophies/functions.php(21): require_once()
+#1 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-settings.php(424): include('/Users/mrwaiman...')
+#2 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-config.php(89): require_once('/Users/mrwaiman...')
+#3 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-load.php(37): require_once('/Users/mrwaiman...')
+#4 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-blog-header.php(13): require_once('/Users/mrwaiman...')
+#5 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/index.php(17): require('/Users/mrwaiman...')
+#6 {main}
+  thrown
+
+2018-08-01T10:11:40+00:00 CRITICAL Uncaught Error: Call to a member function is_empty() on null in /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-content/themes/rextrophies/lib/woocommerce.php:16
+Stack trace:
+#0 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-content/themes/rextrophies/functions.php(21): require_once()
+#1 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-settings.php(424): include('/Users/mrwaiman...')
+#2 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-config.php(89): require_once('/Users/mrwaiman...')
+#3 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-load.php(37): require_once('/Users/mrwaiman...')
+#4 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-blog-header.php(13): require_once('/Users/mrwaiman...')
+#5 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/index.php(17): require('/Users/mrwaiman...')
+#6 {main}
+  thrown
+
+2018-08-01T10:11:50+00:00 CRITICAL Uncaught Error: Call to a member function is_empty() on null in /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-content/themes/rextrophies/lib/woocommerce.php:16
+Stack trace:
+#0 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-content/themes/rextrophies/functions.php(21): require_once()
+#1 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-settings.php(424): include('/Users/mrwaiman...')
+#2 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-config.php(89): require_once('/Users/mrwaiman...')
+#3 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-load.php(37): require_once('/Users/mrwaiman...')
+#4 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-admin/admin-ajax.php(22): require_once('/Users/mrwaiman...')
+#5 {main}
+  thrown
+
+2018-08-01T10:14:35+00:00 CRITICAL Uncaught Error: Call to a member function get_cart_total() on null in /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-content/themes/rextrophies/lib/woocommerce.php:16
+Stack trace:
+#0 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-content/themes/rextrophies/functions.php(21): require_once()
+#1 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-settings.php(424): include('/Users/mrwaiman...')
+#2 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-config.php(89): require_once('/Users/mrwaiman...')
+#3 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-load.php(37): require_once('/Users/mrwaiman...')
+#4 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-blog-header.php(13): require_once('/Users/mrwaiman...')
+#5 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/index.php(17): require('/Users/mrwaiman...')
+#6 {main}
+  thrown
+
+2018-08-01T10:14:50+00:00 CRITICAL Uncaught Error: Call to a member function get_cart_total() on null in /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-content/themes/rextrophies/lib/woocommerce.php:16
+Stack trace:
+#0 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-content/themes/rextrophies/functions.php(21): require_once()
+#1 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-settings.php(424): include('/Users/mrwaiman...')
+#2 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-config.php(89): require_once('/Users/mrwaiman...')
+#3 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-load.php(37): require_once('/Users/mrwaiman...')
+#4 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-admin/admin-ajax.php(22): require_once('/Users/mrwaiman...')
+#5 {main}
+  thrown
+
+2018-08-01T10:18:44+00:00 CRITICAL Uncaught Error: Call to a member function get_cart_contents_count() on null in /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-content/themes/rextrophies/lib/woocommerce.php:16
+Stack trace:
+#0 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-content/themes/rextrophies/functions.php(21): require_once()
+#1 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-settings.php(424): include('/Users/mrwaiman...')
+#2 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-config.php(89): require_once('/Users/mrwaiman...')
+#3 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-load.php(37): require_once('/Users/mrwaiman...')
+#4 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-blog-header.php(13): require_once('/Users/mrwaiman...')
+#5 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/index.php(17): require('/Users/mrwaiman...')
+#6 {main}
+  thrown
+
+2018-08-01T10:19:33+00:00 CRITICAL Uncaught Error: Call to a member function get_cart_contents_count() on null in /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-content/themes/rextrophies/lib/woocommerce.php:16
+Stack trace:
+#0 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-content/themes/rextrophies/functions.php(21): require_once()
+#1 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-settings.php(424): include('/Users/mrwaiman...')
+#2 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-config.php(89): require_once('/Users/mrwaiman...')
+#3 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-load.php(37): require_once('/Users/mrwaiman...')
+#4 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-admin/admin-ajax.php(22): require_once('/Users/mrwaiman...')
+#5 {main}
+  thrown
+
+2018-08-01T11:02:08+00:00 CRITICAL Uncaught Error: Call to a member function get_cart_contents_count() on null in /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-content/themes/rextrophies/lib/woocommerce.php:33
+Stack trace:
+#0 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-content/themes/rextrophies/functions.php(21): require_once()
+#1 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-settings.php(424): include('/Users/mrwaiman...')
+#2 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-config.php(89): require_once('/Users/mrwaiman...')
+#3 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-load.php(37): require_once('/Users/mrwaiman...')
+#4 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-blog-header.php(13): require_once('/Users/mrwaiman...')
+#5 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/index.php(17): require('/Users/mrwaiman...')
+#6 {main}
+  thrown
+
+2018-08-01T15:40:14+00:00 CRITICAL Uncaught Error: Call to a member function is_type() on null in /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-content/themes/rextrophies/woocommerce/single-product/product-image.php:3
+Stack trace:
+#0 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-content/plugins/woocommerce/includes/wc-core-functions.php(210): include()
+#1 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-content/plugins/woocommerce/includes/wc-template-functions.php(1371): wc_get_template('single-product/...')
+#2 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-includes/class-wp-hook.php(286): woocommerce_show_product_images('')
+#3 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-includes/class-wp-hook.php(310): WP_Hook->apply_filters(NULL, Array)
+#4 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-includes/plugin.php(453): WP_Hook->do_action(Array)
+#5 /Users/mrwaimanwong/Dropbox/AMPPS/www/www.rextrophies.local/wp-content/plugins/woocommerce/templates/cont
+

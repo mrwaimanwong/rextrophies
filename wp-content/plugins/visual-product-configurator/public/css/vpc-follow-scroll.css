@@ -1,0 +1,71 @@
+/**
+ * All of the CSS for your public-facing functionality should be
+ * included in this file.
+ */
+
+.vpc-preview-toggle{
+	display: none;
+}
+#vpc-components{
+    margin-top:50px;
+}
+
+@media only screen  and (min-width : 768px) {
+    #vpc-follow-scroll {
+        top: 50px!important;
+    }
+}
+
+@media only screen  and (max-width : 768px) and (orientation:landscape) {
+    #vpc-container {
+        display: flex;
+        flex-direction: column-reverse;
+        width: 100%!important;
+    }
+
+    #vpc-components {
+        margin-top: 0!important;
+    }
+
+    #vpc-follow-scroll {
+        position: relative!important;    
+        top: 0!important;
+        left: 0!important;
+        width: 100%!important;
+    }
+}
+
+@media only screen  and (max-width : 768px) and (orientation:portrait) {
+    .vpc-preview-toggle{
+        display: inline-block;
+        cursor:pointer;
+        background-color: #fff;
+    }
+    .vpc-preview-toggle i{
+        padding:10px;
+        font-size: 20px;
+    }
+    #vpc-follow-scroll{
+        margin-top: 0px;    
+        width: 100% !important;
+        left: 0!important;
+        top:0!important;
+        background-color:#fff;
+        position:absolute;
+        z-index: 99;
+    }
+    #vpc-follow-scroll.fixed-preview{
+        position: fixed;
+        left: 0 !important;
+        width:100% !important;
+    }
+    #vpc-ajax-container #vpc-follow-scroll{
+        margin-top: 20px;
+    }
+    #vpc-components{
+        margin-top:0;
+    }
+ 	
+}
+
+ 

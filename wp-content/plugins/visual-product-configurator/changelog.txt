@@ -1,0 +1,180 @@
+Version 5.6.1 - 30th August, 2018
+- Fixed issue : The bug relative to reorder the layers in the front with default skin
+- Fixed issue : The bug relative to duplicate feature in the wp-admin
+- Fixed issue : The bug relative to "group per component" in the conditionnals rules
+
+Version 5.6 - 19th July, 2018
+- Added the ability to duplicate components and options
+- Added the ability to reorder the layers in the front
+- Fixed issue : The bug relative to the display product variations on the order email
+
+Version 5.5 - 29th June, 2018
+- Added the ability to enable the preview scroll follow on desktop.
+- Fixed issue : The bug relative to the display element3 in the dom
+
+Version 5.4 - 31th May, 2018
+- Added the ability to see the configuration on the cart image thumbnail 
+- Added the ability to add float price to configurateur options
+- Added ability to hide cart button on shop page
+- Added the ability to active the preview scroll follow on mobile
+- Fixed issue : The bug relative to the Woocommerce Currency Switcher plugin on cart page
+- Fixed issue : The bug relative to the display of the image configured in the mail
+- Fixed issue : The bug relative to the creation of the VPC folder
+
+Version 5.3 - 08th May, 2018
+- Added ability to scroll preview on configurator page
+- fixed issue : The bug relative to the conditionnals rules with right skin
+
+Version 5.2 - 27th Avril, 2018
+- Added ability to add a form ( purchasable addon) on configurator page
+- Fixed issue : The bug relative to the display of the "build your own" button for variables products
+
+Version 5.1 - 10th Avril, 2018
+- fixed issue : The bug relative to the conditionnals rules resetting
+
+Version 5.0 - 16th March, 2018
+- Added ability to select a group in the conditional rules
+- Added an option to hide  options selected on cart page
+- Fixed issue : The bug relative to Woocommerce Currency Switcher plugin
+- Fixed issue : The bug relative to the selection of the options of the same component in the conditionnals rules
+- Fixed issue : The bug relative to the dropdown groups options
+
+Version 4.0 - 20th December, 2017
+- Added Edit feature on cart page
+- Added dropdown option feature on configurator page
+- Added the configuration description on the configurator page
+- Added the list of our addons available on the get started page
+
+Version 3.7 - 1st December, 2017
+- Added the compatibility feature of our plugin with WC-Print-Invoices-Packing-Lists
+- Added the compatibility feature of our plugin with Woocommerce Currency Switcher 
+- bug related to fail to add a variable product to the cart
+- Fixed issue : The bug relative to Added taxes management to the plugin depending on woocommerce taxes settings
+
+Version 3.6 - November 16th, 2017
+- Added taxes management to the plugin depending on woocommerce taxes settings
+- Added an option to display or not the image configured in the order mail
+- Fixed issue : The bug relative to themify's display in the admin
+
+Version 3.5 - October 23th, 2017
+- Fixed issue : The bug relative to hide  "Add to cart" button on shop page
+- Fixed issue : The bug relative to disable the license after 24H
+- fixed issue : The bug relative to "drag and drop" components to change the order 
+
+Version 3.4 - October 1st, 2017
+ - Activation with a purchase code added : you must activate your license to have access to the new features.
+ - Fixed issue : The bug relative to the failure to add to the basket
+
+Version 3.3 - Juillet 12th, 2017
+- Fixed issue : The bug relative to the configuration's price that is not correct in the minicart
+
+Version 3.2 - May 12th, 2017
+- Added an option that allows or not to show the tooltip in the options
+- Added new skin
+- Added an option that allows to link products to options
+- Added an option to hide  "build your own" button on shop page
+- Fixed issue : When related products were hidden on the cart page, they were still visible on the widget cart
+
+Version 3.1 - April 19th, 2017
+fixed issue:
+- the bug related to the display of the product details  in the basket
+- the bug related to the price not correctly displayed on the options label
+
+
+Version 3.0.0 - April 12th, 2017
+- Fixed compatibility issue with woocommerce 3.x
+- Fixed issue : When related products were hidden on the cart page, they were still visible on the checkout page and in the order details
+
+Version 2.3.10 - February 25th, 2017
+-Added ability to hide all other components when the customer clicks on one of them.
+-Added vpc shortcode which does the same thing and works the same way as the previous wpb_builder (still valid)
+-Fixed compatibility issue with polylang
+-Fixed minicart unit price issue for custom products
+Fixed addition to cart bug when the quantity is not transmitted in the add to cart form.
+
+Version 2.3.9 - November 7th, 2016
+-Added ability to hide the quantity box on the product page
+-Added ability to transfer the selected quantity on the product page directly on the configuration page.
+-Improved max_input_vars verification in order to disable the save/publish buttons when the max_input_vars have been reached.
+-Fixed issue where the medias are stored on a subdomain or a CDN
+-Fixed quoted names issue which trigger wrong prices calculations and missing layers.
+-Added ability to select whether or not the plugin should store a snapshot of the original configuration data in the orders table everytime an order is made.
+
+Version 2.3.8 - August 17th, 2016
+-Replaced home_url by site_url in utils to avoid the language code in the URL when retrieving the pictures URLs
+-Fixed compatibility issue with WPML
+-Added error control in the front when the component does not have at least one option.
+-Fixed issue: Multiple selections are not shown on the cart page thumbnails.
+
+Version 2.3.7 - July 19th, 2016
+-Added ability to hide linked products in the cart
+-Added controls to prevent a linked product to be removed from the cart without the main one
+-Fixed price format issue when there is a space between the currency and the price
+-Fixed max_input_vars verification issue
+
+Version 2.3.6 - June 9th, 2016
+-Fixed issue when conditionnal rules disappear
+-Fixed issue with polylang language switcher on configuration page
+-Fixed fatal error (eval) when creating a new configuration
+
+Version 2.3.5 - May 20th, 2016
+-Added ability to select an option in the conditional rules
+-Added compatibility with Polylang
+-Added or relationship for conditions in groups
+-Fixed issue: after the rules are applied, the first element available in a component should be selected if there is no other option checked
+-Fixed issue: multiple selections are not shown properly on the featured image area in the cart
+-Fixed price formatting issue with woocommerce standards
+-Fixed multiple selections issue on the cart and checkout pages
+-Fixed order again issue
+-Changed hooks priority to fixed issue with woocommerce multilingual plugin
+
+Version 2.3.4 - February 12th, 2016
+-Fixed issue on conditionnal rules where options and components ID are generated manually
+-Fixed bootstrap modal conflicts
+-Improved conditionnal rules screen
+
+Version 2.3.3 - February 1st, 2016
+-Added version to javascript files loadings
+-Improved configurations in cart storage to avoid conflicts with other plugins
+-Fixed issue: images on the configuration page are not loaded since the last update.
+
+Version 2.3.2 - January 28th, 2016
+-Added lazyload feature in the configurations creation screen to improve the speed for large configurations
+-Added configuration image as thumbnail for the product on the cart page
+-Added setting to hide the add to cart button for configurable products
+-Removed sessions usage configurations in cart
+-Fuxed issue: configuration page issue with WPML when the page translation is not available
+-Fixed issue: the search field in the medias modal is not usable when configuring the options
+-Fixed sort issue for options
+-Fixed issue: The components and options fields can't be edited on firefox
+-Fixed issue: currency don't show up with price when the ajax loading is enabled
+-Fixed issue: Tooltips are not loaded when the ajax loading is enabled
+-Fixed issue: variations configurations are not saved when we click on the publish/save button without displaying the variations
+
+Version 2.3.1 - December 28th, 2015
+-Fixed javascript issue outside the configurator page
+
+Version 2.3 - December 24th, 2015
+-Added description to option tooltip
+-Added number of fields verification in forms to avoid data lost due to max input vars
+-Improved conditionnal rules feature
+-Improved plugin speed
+
+Version 2.2 - December 13rd, 2015
+-Fixed javascript issue that prevent the configurator to load properly
+-Fixed issue: variations configurations are not saved when we click on the Save changes button
+-Fixed issue: icons disappear sometimes when the options names contains characters that can't be included in urls
+
+Version 2.1 - December 07th, 2015
+-Added ability to duplicate a configuration
+-Added ability to update the plugin from wordpress dashboard (require envato username, api key and purchase code)
+-Updated user manual
+-Updated language files
+-Added ability to load the configurator via ajax
+-Added ability to reorganize the components and options when creating a component
+-Fixed issue: configurator is very slow after the update to 2.0
+
+Version 2.0 - November 23rd, 2015
+-Fully rewritten plugin which is more integrated in the wordpress ecosytem
+-Added developer API to develop addons
+-After the update, remember to run the database upgrade using this button http://prntscr.com/95wzuc visible in the admin area so the new version can migrate the old configurations to the new structure

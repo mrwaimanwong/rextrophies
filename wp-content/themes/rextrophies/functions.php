@@ -18,6 +18,8 @@ require_once( get_stylesheet_directory() . '/lib/custom_header.php');
 require_once( get_stylesheet_directory() . '/lib/nav_locations.php');
 require_once( get_stylesheet_directory() . '/lib/layout.php');
 require_once( get_stylesheet_directory() . '/lib/custom_footer.php');
+require_once( get_stylesheet_directory() . '/lib/woocommerce.php');
+require_once( get_stylesheet_directory() . '/lib/custom_api.php');
 // require_once( get_stylesheet_directory() . '/lib/sitemap.php');
 // require_once( get_stylesheet_directory() . '/lib/admin_management.php');
 

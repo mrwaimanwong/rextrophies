@@ -36,11 +36,11 @@ echo '
 ';
 }
 
-function ww_add_page_nav() {
-
-	$prevlink = previous_post_link('<div class="page-nav left">&laquo;%link</div>');
-	$nextlink = next_post_link('<div class="page-nav right">%link&raquo;</div>');
-	return $prevlink.$nextlink;
-}
+// function ww_add_page_nav() {
+//
+// 	$prevlink = previous_post_link('<div class="page-nav left">&laquo;%link</div>');
+// 	$nextlink = next_post_link('<div class="page-nav right">%link&raquo;</div>');
+// 	return $prevlink.$nextlink;
+// }
 
 genesis();

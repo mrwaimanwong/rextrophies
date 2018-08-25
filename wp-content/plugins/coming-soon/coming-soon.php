@@ -3,7 +3,7 @@
  * Plugin Name:       Coming Soon Page & Maintenance Mode by SeedProd
  * Plugin URI:        http://www.seedprod.com
  * Description:       The #1 Coming Soon Page, Under Construction & Maintenance Mode plugin for WordPress.
- * Version:           5.0.19
+ * Version:           5.0.20
  * Author:            SeedProd
  * Author URI:        http://www.seedprod.com
  * Text Domain:       coming-soon
@@ -21,7 +21,7 @@ define( 'SEED_CSP4_SHORTNAME', 'seed_csp4' ); // Used to reference namespace fun
 define( 'SEED_CSP4_SLUG', 'coming-soon/coming-soon.php' ); // Used for settings link.
 define( 'SEED_CSP4_TEXTDOMAIN', 'coming-soon' ); // Your textdomain
 define( 'SEED_CSP4_PLUGIN_NAME', __( 'Coming Soon Page & Maintenance Mode by SeedProd', 'coming-soon' ) ); // Plugin Name shows up on the admin settings screen.
-define( 'SEED_CSP4_VERSION', '5.0.19'); // Plugin Version Number. Recommend you use Semantic Versioning http://semver.org/
+define( 'SEED_CSP4_VERSION', '5.0.20'); // Plugin Version Number. Recommend you use Semantic Versioning http://semver.org/
 define( 'SEED_CSP4_PLUGIN_PATH', plugin_dir_path( __FILE__ ) ); // Example output: /Applications/MAMP/htdocs/wordpress/wp-content/plugins/seed_csp4/
 define( 'SEED_CSP4_PLUGIN_URL', plugin_dir_url( __FILE__ ) ); // Example output: http://localhost:8888/wordpress/wp-content/plugins/seed_csp4/
 define( 'SEED_CSP4_TABLENAME', 'seed_csp4_subscribers' );
@@ -101,6 +101,49 @@ if( is_admin() ) {
 } else {
 // Public only
 
+}
+
+
+// Clear Popular Caches
+add_action( 'update_option_seed_csp4_settings_content', 'seed_csp4_clear_known_caches', 10, 2 );
+
+function seed_csp4_clear_known_caches($o,$n){
+  try {
+    if(isset($o['status']) && isset($n['status'])){
+      if($o['status'] != $n['status']){
+
+        // Clear Litespeed cache
+        method_exists( 'LiteSpeed_Cache_API', 'purge_all' ) && LiteSpeed_Cache_API::purge_all() ;
+
+        // WP Super Cache
+        if ( function_exists( 'wp_cache_clear_cache' ) ) {
+          wp_cache_clear_cache();
+        }
+
+        // W3 Total Cahce
+        if ( function_exists( 'w3tc_pgcache_flush' ) ) {
+          w3tc_pgcache_flush();
+        }
+
+        // Site ground
+        if ( class_exists( 'SG_CachePress_Supercacher' ) && method_exists( 'SG_CachePress_Supercacher ',  'purge_cache' )) {
+          SG_CachePress_Supercacher::purge_cache(true);
+        }
+
+        // Endurance Cache
+        if ( class_exists( 'Endurance_Page_Cache' ) ) {
+          $e = new Endurance_Page_Cache;
+          $e->purge_all();
+        }
+
+        // WP Fastest Cache
+        if ( isset($GLOBALS['wp_fastest_cache'] ) && method_exists( $GLOBALS['wp_fastest_cache'], 'deleteCache') ) {
+          $GLOBALS['wp_fastest_cache']->deleteCache(true);
+        }
+
+      }
+    }
+  } catch (Exception $e) {}
 }
 
 

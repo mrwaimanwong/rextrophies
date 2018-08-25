@@ -1,0 +1,219 @@
+#vpc-preview, .vpc-cart-config-image, .saved-config-preview
+{
+    position: relative;
+    border: 1px solid #f1f4f9;
+}
+#vpc-preview img, .vpc-cart-config-image img, .saved-config-preview img
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+#vpc-preview img:first-child, .vpc-cart-config-image img:first-child, .saved-config-preview img:first-child
+{
+    position: relative;
+}
+
+.vpc-success, .vpc-failure
+{
+    color: white;
+    padding: 5px;
+    text-align: center;
+    font-size: 16px;
+}
+.vpc-success
+{
+    background-color: green;    
+}
+.vpc-success a
+{
+    color: greenyellow;
+}
+.vpc-failure
+{
+    background-color: red;
+}
+
+#vpc-add-to-cart {
+    display: inline-block;
+}
+
+#vpc-add-to-cart:after {
+    content: url('../images/shopping-cart.svg');
+    margin-left: 5px;
+    font-family:'FontAwesome';
+    font-size:14px;
+    letter-spacing: normal;
+    width: 14px;
+    display: inline-block;
+    top: 2px;
+    position: relative;
+}
+
+.vpc-cart-config
+{
+    border: 1px solid #c8c8c8;
+    margin-bottom: 5px;
+    padding: 5px;
+    
+}
+.vpc-cart-config img
+{
+    margin: 5px;
+    padding: 5px;
+    display: inline-block;
+    vertical-align: middle;
+    max-width: 100%;
+}
+.vpc-cart-config-image{
+    max-width: 150px;
+    margin: 0 auto;
+}
+
+.woocommerce .vpc-cart-config-image img{
+    max-width: 100% !important;
+    background: none;
+}
+.vpc-cart-options-container{
+    padding:20px;
+    font-size: 16px;
+}
+.vpc-cart-options-container img,.woocommerce .vpc-cart-options-container img{
+    max-width: 30px;
+    max-height: 30px;
+}
+.vpc-single-option-wrap
+{
+    display: inline-block;
+}
+.vpc-cart-options-container
+{
+    padding: 5px; 
+    margin: 5px
+}
+
+.vpc-cart-options-container > div{
+    display: table;
+    width:100%;
+    border:1px solid #ccc;
+    padding:0 5px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+.vpc-cart-options-container > div > strong{
+    display: table-cell;
+    vertical-align: middle;
+}
+.vpc-cart-options-container > div > strong > span{
+    font-weight: normal;
+}
+
+.vpc-cart-options-container > div > img{
+    float:right;
+}
+
+#vpc-ajax-container {
+  position: relative;
+  min-height: 500px;
+}
+
+#vpc-ajax-loader-container.vpc-ajax-loader {
+	min-height:500px;
+	position:absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: #fff;
+}
+#vpc-ajax-loader-container.vpc-ajax-loader > img{
+	position: absolute;
+	top: 190px;
+	left:0;
+	right: 0;
+	margin:auto;
+}
+#vpc-preview img
+{
+    background: none !important;
+}
+.conf_desc{
+    font-size: 13px;
+}
+
+.vpc-options select {
+    height: 30px;
+}
+
+#vpc-preview-wrap {
+  position: relative;
+}
+
+.vpc-desktop-follow-scroll-disabled #vpc-container #vpc-preview-wrap {
+  position: static;
+}
+.disabledClick {
+    pointer-events: none;
+    background-color: #f1f1f1 !important;
+    color: #ccc !important;
+    cursor: auto;
+}
+
+@media only screen and (max-width:768px){
+   .vpc-cart-config > div {
+       padding: 0 5px 10px;
+       min-width: 150px;
+   }
+   .vpc-cart-config .vpc-cart-options-container{
+       margin: 0;
+       padding: 0;
+   }
+   .vpc-cart-options-container > div > strong{
+       display: block;
+   }
+
+   #vpc-preview-wrap {
+       background-color: #fff;
+       z-index: 1;
+   }
+
+   .VPC_Default_Skin {
+       display: flex !important;
+       flex-direction: column;
+   }
+
+   .VPC_Default_Skin .conf_desc {
+       order: 1;
+   }
+
+   .VPC_Default_Skin #vpc-preview-wrap {
+       order: 2;
+   }
+
+   .VPC_Default_Skin #vpc-components {
+       order: 3;
+   }
+
+   .VPC_Default_Skin #vpc-form-builder-wrap {
+       order: 4;
+   }
+
+   .VPC_Default_Skin #vpc-bottom-limit {
+       order: 5;
+   }
+
+   .VPC_Default_Skin .vpc-debug {
+       order: 6;
+   }
+
+   .vpc-desktop-follow-scroll-disabled #vpc-container #vpc-preview-wrap {
+      position: relative;
+    }
+
+   .vpc-mobile-follow-scroll-disabled #vpc-container #vpc-preview-wrap,
+   .vpc-desktop-follow-scroll-disabled.vpc-mobile-follow-scroll-disabled #vpc-container #vpc-preview-wrap {
+      position: static;
+   }
+   
+}

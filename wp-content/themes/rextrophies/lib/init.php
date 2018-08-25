@@ -23,23 +23,6 @@ function ww_theme_setup () {
 	/*If you're going to use the date picker in Contact Form 7*/
 	//add_filter( 'wpcf7_support_html5_fallback', '__return_true' );
 
-
-add_action( 'after_setup_theme', 'woocommerce_support' );
-add_theme_support( 'wc-product-gallery-zoom' );
-add_theme_support( 'wc-product-gallery-lightbox' );
-add_theme_support( 'wc-product-gallery-slider' );
-add_filter( 'loop_shop_per_page', 'new_loop_shop_per_page', 20 );
-}
-
-function woocommerce_support() {
-		add_theme_support( 'woocommerce' );
-}
-
-function new_loop_shop_per_page( $cols ) {
-// $cols contains the current number of products per page based on the value stored on Options -> Reading
-// Return the number of products you wanna show per page.
-$cols = 12;
-return $cols;
 }
 
 /** Add Viewport meta tag for mobile browsers */
@@ -70,37 +53,11 @@ function ww_dont_update( $r, $url ) {
 add_filter( 'auto_update_plugin', '__return_true' );
 add_filter( 'auto_update_theme', '__return_true' );
 
-// // Create a custom post type
-// add_action( 'init', 'ww_custom_post_type' );
-//
-// function ww_custom_post_type() {
-//
-//    $labels = array(
-//     'name' => __( 'Homepage Slider' ),
-//     'singular_name' => __( 'Homepage Slider' ),
-//     'all_items' => __('All Homepage Slides'),
-//     'add_new' => _x('Add new Homepage Slide', 'Home Sections'),
-//     'add_new_item' => __('Add new Homepage Slide'),
-//     'edit_item' => __('Edit Homepage Slide'),
-//     'new_item' => __('New Homepage Slide'),
-//     'view_item' => __('View Homepage Slide'),
-//     'search_items' => __('Search in Homepage Slides'),
-//     'not_found' =>  __('No Homepage Slides found'),
-//     'not_found_in_trash' => __('No Homepage Slides found in trash'),
-//     'parent_item_colon' => ''
-//     );
-//
-//     $args = array(
-//     'labels' => $labels,
-//     'public' => true,
-//     'has_archive' => true,
-//     'menu_position' => 2,
-//     'menu_icon' => 'dashicons-admin-generic',
-// 	'rewrite' => array('slug' => 'homepage_slider'),
-// 	'taxonomies' => array( 'category', 'post_tag' ),
-// 	'supports'  => array( 'title', 'editor', 'revisions', 'thumbnail', 'genesis-cpt-archives-settings' )
-// 	// 'supports'  => array( 'title', 'editor', 'revisions', 'excerpt', 'custom-fields', 'comments',)
-// 	);
-//
-//   register_post_type( 'homepage_slider', $args);
+// function php_execute($html){
+// if(strpos($html,"<"."?php")!==false){ ob_start(); eval("?".">".$html);
+// $html=ob_get_contents();
+// ob_end_clean();
 // }
+// return $html;
+// }
+// add_filter('widget_text','php_execute',100);

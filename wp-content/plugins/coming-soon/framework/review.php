@@ -18,7 +18,9 @@ function seed_csp4_admin_footer( $text ) {
   return $text;
 }
 
+if(!empty($_GET['page']) && $_GET['page'] == 'seed_csp4'){
 add_action( 'admin_notices', 'seed_csp4_review' );
+}
 function seed_csp4_review() {
 
 	// Verify that we can do a check for reviews.
@@ -37,7 +39,8 @@ function seed_csp4_review() {
 		$load = true;
 	} else {
 		// Check if it has been dismissed or not.
-		if ( (isset( $review['dismissed'] ) && ! $review['dismissed']) && (isset( $review['time'] ) && (($review['time'] + DAY_IN_SECONDS) <= $time) && $settings['status'] > 0) ) {
+		//if ( (isset( $review['dismissed'] ) && ! $review['dismissed']) && (isset( $review['time'] ) && (($review['time'] + DAY_IN_SECONDS) <= $time) && $settings['status'] > 0) ) {
+			if ( (isset( $review['dismissed'] ) && ! $review['dismissed']) ) {
 			$load = true;
 		}
 	}
@@ -66,12 +69,12 @@ function seed_csp4_review() {
 	// We have a candidate! Output a review message.
 	?>
 	<div class="notice notice-info is-dismissible seed-csp4-review-notice">
-		<p><?php printf(__( 'Hey %s, I noticed you created a %s with our plugin - that’s awesome! Could you please do me a BIG favor and give it a 5-star rating on WordPress to help us spread the word?', 'coming-soon' ),$fname, $page_type); ?></p>
-		<p><strong><?php _e( '~ John Turner<br>SeedProd', 'coming-soon' ); ?></strong></p>
+		<p><?php printf(__( 'Hey %s, <br><br>I just want to say "Thank you" using this free plugin. If you have any questions  post it to our <a href="https://wordpress.org/support/plugin/coming-soon">support forums</a>.<br><br>Also check out the &#8594; <a href="https://www.seedprod.com/ultimate-coming-soon-page-vs-coming-soon-pro/?utm_source=coming-soon-plugin&utm_medium=link&utm_campaign=coming-soon-special-offer">special upgrade offer</a> we have going on right now for the Pro Verison.<br><br>Hope you have a great %s! Cheers', 'coming-soon' ),ucfirst($fname), date('l') ); ?></p>
+		<p><strong><?php _e( '--<br> John Turner<br><a href="https://www.seedprod.com/ultimate-coming-soon-page-vs-coming-soon-pro/?utm_source=coming-soon-plugin&utm_medium=link&utm_campaign=coming-soon-special-offer-brand">SeedProd.com</a>', 'coming-soon' ); ?></strong></p>
 		<p>
-			<a href="https://wordpress.org/support/plugin/coming-soon/reviews/?filter=5#new-post" class="seed-csp4-dismiss-review-notice seed-csp4-review-out" target="_blank" rel="noopener"><?php _e( 'Ok, you deserve it', 'coming-soon' ); ?></a><br>
-			<a href="#" class="seed-csp4-dismiss-review-notice" target="_blank" rel="noopener"><?php _e( 'Nope, maybe later', 'coming-soon' ); ?></a><br>
-			<a href="#" class="seed-csp4-dismiss-review-notice" target="_blank" rel="noopener"><?php _e( 'I already did', 'coming-soon' ); ?></a><br>
+			<!-- <a href="https://wordpress.org/support/plugin/coming-soon/reviews/?filter=5#new-post" class="seed-csp4-dismiss-review-notice seed-csp4-review-out" target="_blank" rel="noopener"><?php _e( 'Ok, you deserve it', 'coming-soon' ); ?></a><br> -->
+			<a href="#" class="seed-csp4-dismiss-review-notice" target="_blank" rel="noopener"><?php _e( 'Dismiss Notice', 'coming-soon' ); ?></a><br>
+			<!-- <a href="#" class="seed-csp4-dismiss-review-notice" target="_blank" rel="noopener"><?php _e( 'I already did', 'coming-soon' ); ?></a><br> -->
 		</p>
 	</div>
 	<script type="text/javascript">

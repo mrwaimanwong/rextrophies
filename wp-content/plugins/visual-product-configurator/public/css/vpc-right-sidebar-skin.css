@@ -1,0 +1,14 @@
+.o-left-offset-2-3{
+   padding-left:66.66666666666667%;
+}
+@media (max-width: 768px) {
+      
+     .o-left-offset-2-3{
+        padding-left:0;
+      }
+}
+ @media (max-width: 667px) {
+       .o-left-offset-2-3{
+        padding-left:0;
+      }
+ }

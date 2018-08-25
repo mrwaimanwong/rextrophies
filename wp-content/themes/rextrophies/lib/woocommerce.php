@@ -19,7 +19,14 @@ if ( class_exists( 'WooCommerce' ) ) {
 
 }
 
-// add_filter( 'wp_nav_menu_items', 'rex_custom_menu_item', 10, 2 );
+
+//Redirect "Continue Shopping" button
+add_filter( 'woocommerce_continue_shopping_redirect', 'wc_custom_redirect_continue_shopping' );
+
+function wc_custom_redirect_continue_shopping() {
+  //return your desired link here.
+  return '/shop';
+}
 
 function rex_custom_menu_item ( $items, $args ) {
 

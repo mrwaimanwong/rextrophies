@@ -1504,6 +1504,7 @@ img.alignright,
 // 	height: 300px;
 // }
 
+
 /* # Content Area
 ---------------------------------------------------------------------------------------------------- */
 
@@ -1719,13 +1720,38 @@ p.entry-meta {
 ---------------------------------------------------------------------------------------------------- */
 
 .sidebar {
-	font-size: 16px;
-	font-size: 1.6rem;
+	@include font_size(1.4);
+	color: #333;
+
+	a {
+		color: #666;
+		text-decoration: none;
+		&:hover {
+			color: $color-primary;
+		}
+	}
+
+	h4 {
+		@include font_size(1.6);
+	}
+
+	input {
+		border-radius: 5px;
+		@include font_size(1.4);
+	}
+
+	.button, .page-nav a, button, input[type=button], input[type=reset], input[type=submit] {
+		padding: .5em 1em;
+	}
+
+	.product-title {
+		font-weight: 400;
+	}
 }
 
 .sidebar li {
 	margin-bottom: 10px;
-	padding-bottom: 10px;
+	// padding-bottom: 10px;
 }
 
 .sidebar p:last-child,
@@ -1734,7 +1760,7 @@ p.entry-meta {
 }
 
 .sidebar .widget {
-	margin-bottom: 60px;
+	margin-bottom: 3em;
 }
 
 
@@ -1871,7 +1897,7 @@ p.entry-meta {
 
 }
 
-/* wpcf7
+/* Contact Form 7 wpcf7
 -----------------------------------------------------------------------------------------------------*/
 .wpcf7 {
 
@@ -1931,6 +1957,11 @@ p.entry-meta {
 	border-radius: 5px;
 	}
 
+	.wpcf7-form-control-wrap {
+			transform:scale(0.6);
+			transform-origin:0 0;
+			border-radius: 10px;
+		}
 }
 
 .page-header-container {
@@ -2035,6 +2066,10 @@ p.entry-meta {
     color: #fff;
 }
 
+.woocommerce #respond input#submit.alt.disabled, .woocommerce #respond input#submit.alt.disabled:hover, .woocommerce #respond input#submit.alt:disabled, .woocommerce #respond input#submit.alt:disabled:hover, .woocommerce #respond input#submit.alt:disabled[disabled], .woocommerce #respond input#submit.alt:disabled[disabled]:hover, .woocommerce a.button.alt.disabled, .woocommerce a.button.alt.disabled:hover, .woocommerce a.button.alt:disabled, .woocommerce a.button.alt:disabled:hover, .woocommerce a.button.alt:disabled[disabled], .woocommerce a.button.alt:disabled[disabled]:hover, .woocommerce button.button.alt.disabled, .woocommerce button.button.alt.disabled:hover, .woocommerce button.button.alt:disabled, .woocommerce button.button.alt:disabled:hover, .woocommerce button.button.alt:disabled[disabled], .woocommerce button.button.alt:disabled[disabled]:hover, .woocommerce input.button.alt.disabled, .woocommerce input.button.alt.disabled:hover, .woocommerce input.button.alt:disabled, .woocommerce input.button.alt:disabled:hover, .woocommerce input.button.alt:disabled[disabled], .woocommerce input.button.alt:disabled[disabled]:hover {
+	background-color: $color-primary;
+}
+
 .widget_product_search button {
 	background-color: #ebe9eb;
 	color: #515151;
@@ -2048,15 +2083,257 @@ p.entry-meta {
 	color: $color-secondary;
 }
 
-// .sku_wrapper {
-// 	display: none;
+.product_meta {
+	color: #999;
+	@include font_size(1.4);
+
+	.posted_in {
+		a {
+			color: #999;
+		}
+	}
+}
+
+//Styling selectors
+
+// .value {
+//     position: relative;
 // }
+
+/*replace the content value with the
+corresponding value from the list below*/
+
+// .value:after {
+//     content: "\f078";
+//     font-family: 'FontAwesome';
+//     font-style: normal;
+//     font-weight: normal;
+//     text-decoration: inherit;
+// /*--adjust as necessary--*/
+//     color: $color-gray-light;
+//     font-size: 18px;
+//     padding-right: 0.5em;
+//     position: absolute;
+//     // top: 10px;
+//     right: .5em;
+// }
+.woocommerce .woocommerce-ordering select {
+	padding: .75em 1em;
+}
+
+.woocommerce .woocommerce-result-count {
+	color: #666;
+	@include font_size(1.6);
+}
+
+.woocommerce .woocommerce-breadcrumb {
+	@include font_size(1.4);
+}
+
+.woocommerce nav.woocommerce-pagination ul {
+	border: 0;
+	margin-bottom: 2em;
+}
+
+.woocommerce nav.woocommerce-pagination ul li {
+	border: 0;
+	padding: 0 .25em;
+}
+
+.woocommerce nav.woocommerce-pagination ul li a:focus, .woocommerce nav.woocommerce-pagination ul li a:hover, .woocommerce nav.woocommerce-pagination ul li span.current {
+	background-color: $color-primary;
+	color: #fff;
+	border-radius: 5px;
+	// padding: 0 .25em;
+}
+
+select {
+  // margin: 50px;
+  // width: inherit;
+  padding: 0 1em;
+  @include font-size(1.2);
+  border: 0;
+  // height: 34px;
+  appearance: none;
+	background: url('/wp-content/themes/rextrophies/images/chevron-down.svg') 95% 50% no-repeat;
+	background-size: 1em;
+  background-color: #f1f1f1;
+}
+
+/* CAUTION: IE hackery ahead */
+select::-ms-expand {
+    display: none; /* remove default arrow on ie10 and ie11 */
+}
+
+
+.woocommerce #content div.product div.images, .woocommerce div.product div.images, .woocommerce-page #content div.product div.images, .woocommerce-page div.product div.images {
+	width: 50%;
+
+	@include bp(papa-bear){
+		width: 48%;
+	};
+
+	@include bp(mama-bear){
+		width: auto;
+		float: none;
+	};
+}
+
+
+.woocommerce div.product div.summary {
+	color: $color-gray-medium;
+	width: 30%;
+	margin-left: 3em;
+	float: left;
+
+	@include bp(papa-bear){
+		width: 48%;
+		margin-left: 0;
+		float: right;
+	};
+
+	@include bp(mama-bear){
+		width: auto;
+		float: none;
+	};
+}
+
+.variations {
+	// width: inherit!important;
+
+	td {
+		line-height: 1.5em;
+	}
+}
+
+.woocommerce div.product form.cart .variations label {
+	color: #666;
+	text-transform: uppercase;
+	@include font_size(1.4);
+}
+
+.woocommerce div.product .woocommerce-tabs .panel {
+	// @include font_size(1.4);
+
+	h2 {
+		@include font_size(1.4);
+		font-weight: 400;
+		color: #999;
+	}
+}
+.woocommerce div.product .woocommerce-tabs ul.tabs li a {
+	@include font_size(1.6);
+	// font-weight: 400;
+	text-transform: uppercase;
+	outline: 0;
+	&:hover {
+		color: #999;
+	}
+}
+
+.woocommerce table.shop_attributes tbody {
+	border: 0;
+}
+
+.woocommerce table.shop_attributes th {
+	text-transform: uppercase;
+	color: #666;
+	border: 0;
+}
+
+.woocommerce table.shop_attributes td {
+	border: 0;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li {
+	border: 1px solid #fff;
+	background-color: inherit;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li.active {
+	border-bottom-color: $color-primary;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs::before {
+	border: 0;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li::after, .woocommerce div.product .woocommerce-tabs ul.tabs li::before {
+	border: 0;
+}
+
+.upsells > h2, .related > h2 {
+	@include font_size(1.8);
+	// text-transform: uppercase;
+	margin-bottom: 2em;
+}
+
+.woocommerce table.shop_attributes {
+	border: 0;
+}
+
+/* target Internet Explorer 9 to undo the custom arrow */
+@media screen and (min-width:0\0) {
+    select {
+        background:none\9;
+        padding: 5px\9;
+    }
+}
+
+.woocommerce .quantity .qty {
+	padding: .85em .5em;
+	border-radius: 5px;
+	border: 0;
+	background-color: #f1f1f1;
+}
+
+.woocommerce div.product p.price, .woocommerce div.product span.price {
+	color: $color-primary;
+}
+
+.woocommerce div.product form.cart .reset_variations {
+	color: #999;
+}
+
+.woocommerce form .form-row input.input-text, .woocommerce form .form-row textarea {
+	border-radius: 5px;
+}
+
+//Product Add-on Plugins
+
+div.product-addon {
+	@include font_size(1.4);
+
+	h3 {
+		@include font_size(1.6);
+	}
+
+	input[type='file'] {
+		@include font_size(1.4);
+		color: #666;
+	}
+}
+
 
 //Visual Composer Plugins
 .vpc-global-preview .text_field {
 	text-align: center;
 	text-transform: uppercase;
 	width: 29%;
+}
+
+// #vpc-preview {
+// 	width: 70%;
+// 	margin: 0 auto;
+// }
+
+#vpc-preview, .vpc-cart-config-image, .saved-config-preview {
+	// border: 0!important;
+	border-radius: 5px;
+}
+
+.vpc-component-header > img {
+	display: none !important;
 }
 
 .woocommerce a.vpc-configure-button {
@@ -2069,14 +2346,37 @@ p.entry-meta {
 	background-color: $color-gray-dark;
 	color: #FFF;
 }
-
-#vpc-preview {
-	width: 70%;
-	margin: 0 auto;
+#vpc-price-container {
+	color: $color-primary!important;
 }
 
-.vpc-component-header > img {
-	display: none !important;
+#vpc-qty-container input[type=button], .vpc-action-buttons button {
+	background-color: $color-primary!important;
+	// padding: 1em!important; //Some VPC classes are using !important
+	&:hover {
+		background-color: $color-gray-dark!important;
+	}
+}
+
+#vpc-components {
+
+	.vpc-component {
+		border: 0 0 0 1px;
+		// border-radius: 5px;
+		// margin-bottom: 1em;
+
+		.vpc-options {
+			background-color: inherit!important;
+
+			.vpc-group {
+				border: 0;
+			}
+
+			.vpc-group-name {
+				display: none;
+			}
+		}
+	}
 }
 
 /* # Media Queries

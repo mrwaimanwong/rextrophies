@@ -400,8 +400,8 @@ input:focus[type="button"],
 input:focus[type="reset"],
 input:focus[type="submit"],
 .button:focus  {
-	background-color: $color-gray-dark;
-	color: #fff;
+	background-color: $color-secondary;
+	color: $color-gray-dark;
 }
 
 .entry-content .button:hover,
@@ -1443,6 +1443,17 @@ img.alignright,
 		@include bp(mama-bear) {
 			background: none;
 		};
+
+		.button {
+			// color: $color-gray-dark;
+			// background-color: $color-secondary;
+
+		}
+
+		.button:hover {
+			color: #fff;
+			background-color: $color-primary-light;
+		}
 	}
 
 	.spotlight-right {
@@ -1466,8 +1477,7 @@ img.alignright,
 		}
 
 		.button:hover {
-			color: #fff;
-			background-color: $color-gray-dark;
+			background-color: $color-secondary-light;
 		}
 	}
 }
@@ -2062,8 +2072,8 @@ p.entry-meta {
 }
 
 .woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover {
-    background-color: $color-gray-dark;
-    color: #fff;
+    background-color: $color-secondary;
+    color: $color-gray-dark;
 }
 
 .woocommerce #respond input#submit.alt.disabled, .woocommerce #respond input#submit.alt.disabled:hover, .woocommerce #respond input#submit.alt:disabled, .woocommerce #respond input#submit.alt:disabled:hover, .woocommerce #respond input#submit.alt:disabled[disabled], .woocommerce #respond input#submit.alt:disabled[disabled]:hover, .woocommerce a.button.alt.disabled, .woocommerce a.button.alt.disabled:hover, .woocommerce a.button.alt:disabled, .woocommerce a.button.alt:disabled:hover, .woocommerce a.button.alt:disabled[disabled], .woocommerce a.button.alt:disabled[disabled]:hover, .woocommerce button.button.alt.disabled, .woocommerce button.button.alt.disabled:hover, .woocommerce button.button.alt:disabled, .woocommerce button.button.alt:disabled:hover, .woocommerce button.button.alt:disabled[disabled], .woocommerce button.button.alt:disabled[disabled]:hover, .woocommerce input.button.alt.disabled, .woocommerce input.button.alt.disabled:hover, .woocommerce input.button.alt:disabled, .woocommerce input.button.alt:disabled:hover, .woocommerce input.button.alt:disabled[disabled], .woocommerce input.button.alt:disabled[disabled]:hover {
@@ -2317,9 +2327,14 @@ div.product-addon {
 
 //Visual Composer Plugins
 .vpc-global-preview .text_field {
-	text-align: center;
-	text-transform: uppercase;
-	width: 29%;
+	// text-align: center;
+	// text-transform: uppercase;
+	// width: 29%;
+	display: none;
+}
+
+.vpc-single-option-wrap.textfield input[type="text"] {
+	border-radius: 5px;
 }
 
 // #vpc-preview {
@@ -2343,8 +2358,8 @@ div.product-addon {
 }
 
 .woocommerce a.vpc-configure-button:hover {
-	background-color: $color-gray-dark;
-	color: #FFF;
+	background-color: $color-secondary;
+	color: $color-gray-dark;
 }
 #vpc-price-container {
 	color: $color-primary!important;
@@ -2352,9 +2367,11 @@ div.product-addon {
 
 #vpc-qty-container input[type=button], .vpc-action-buttons button {
 	background-color: $color-primary!important;
+	//font-weight: 700!important; //Some VPC classes are using !important
 	// padding: 1em!important; //Some VPC classes are using !important
 	&:hover {
-		background-color: $color-gray-dark!important;
+		background-color: $color-secondary!important;
+		color: $color-gray-dark!important;
 	}
 }
 
@@ -2376,6 +2393,43 @@ div.product-addon {
 				display: none;
 			}
 		}
+	}
+}
+
+.vpc-cart-config {
+	border: 0;
+	margin-bottom: 0;
+	padding: 0;
+}
+
+.vpc-cart-options-container > div {
+	border: 0;
+}
+
+.sidebar .vpc-cart-options-container > div {
+	font-weight: 400;
+	@include font_size(1.4);
+	display: inherit;
+}
+
+.sidebar {
+	.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt {
+	    background-color: #ebe9eb;
+			width: auto;
+			color: #515151;
+	}
+
+	.woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover {
+	    background-color: #dad8da;
+	}
+
+	.woocommerce ul.cart_list li a, .woocommerce ul.product_list_widget li a {
+		padding: .5em 1em;
+		display: inline-block;
+	}
+
+	.woocommerce ul.cart_list li dl dt, .woocommerce ul.product_list_widget li dl dt {
+		color: #666;
 	}
 }
 

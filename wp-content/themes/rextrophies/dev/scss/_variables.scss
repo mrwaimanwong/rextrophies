@@ -8,6 +8,8 @@ $color-primary-dark: darken(desaturate($color-primary, 20), 20);
 $color-primary-light: lighten(desaturate($color-primary, 5), 10);
 
 $color-secondary: #fec658;
+$color-secondary-dark: darken(desaturate($color-secondary, 20), 20);
+$color-secondary-light: lighten(desaturate($color-secondary, 5), 10);
 
 $color-gray-dark: #191c21;
 $color-gray-medium: lighten($color-gray-dark, 10);
